@@ -1,0 +1,77 @@
+﻿using Microsoft.EntityFrameworkCore;
+using ShieldMyRide.Context;
+using ShieldMyRide.Models;
+using ShieldMyRide.Repositary.Interfaces;
+
+namespace ShieldMyRide.Repositary.Implementation
+{
+    public class ClaimRepository : IClaimRepository
+    {
+        private readonly MyDBContext _context;
+
+        public ClaimRepository(MyDBContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<InsuranceClaim> GetByIdAsync(int id)
+        {
+            return await _context.InsuranceClaims
+                .Include(c => c.User)
+                .Include(c => c.Proposal)
+                .FirstOrDefaultAsync(c => c.ClaimId == id);
+        }
+
+        public async Task<IEnumerable<InsuranceClaim>> GetAllAsync()
+        {
+            return await _context.InsuranceClaims
+                .Include(c => c.User)
+                .Include(c => c.Proposal)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<InsuranceClaim>> GetByUserIdAsync(int userId)
+        {
+            return await _context.InsuranceClaims
+                .Where(c => c.UserId == userId)
+                .Include(c => c.Proposal)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<InsuranceClaim>> GetByStatusAsync(string status)
+        {
+            return await _context.InsuranceClaims
+                .Where(c => c.ClaimStatus == status)
+                .Include(c => c.User)
+                .Include(c => c.Proposal)
+                .ToListAsync();
+        }
+
+        public async Task AddAsync(InsuranceClaim claim)
+        {
+            await _context.InsuranceClaims.AddAsync(claim);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(InsuranceClaim claim)
+        {
+            _context.InsuranceClaims.Update(claim);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var claim = await GetByIdAsync(id);
+            if (claim != null)
+            {
+                _context.InsuranceClaims.Remove(claim);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<bool> ClaimExistsAsync(int id)
+        {
+            return await _context.InsuranceClaims.AnyAsync(c => c.ClaimId == id);
+        }
+    }
+}

@@ -147,8 +147,8 @@ namespace ShieldMyRide.Controllers
                 SecurityStamp = Guid.NewGuid().ToString(),
                 UserName = model.Username,
                 PhoneNumber = model.PhoneNumber,
-                AadhaarHash = HashHelper.ComputeSha256Hash(model.Aadhaar),
-                PanHash = HashHelper.ComputeSha256Hash(model.PanNumber)
+                AadhaarHash = HashHelper.ComputeSha256Hash(model.AadhaarMasked),
+                PanHash = HashHelper.ComputeSha256Hash(model.PanMasked)
             };
 
             var result = await userManager.CreateAsync(user, model.Password);
@@ -176,8 +176,8 @@ namespace ShieldMyRide.Controllers
                 LastName = model.LastName,
                 Email = model.Email,
                 PhoneNumber = model.PhoneNumber,
-                AadhaarNumber = model.Aadhaar,
-                PanNumber = model.PanNumber,
+                AadhaarNumber = model.AadhaarMasked,
+                PanNumber = model.PanMasked,
                 Role = model.Role,
                 DateOfBirth = model.DateOfBirth,
                 PasswordHash = user.PasswordHash, // still hashed

@@ -40,12 +40,18 @@ namespace ShieldMyRide.Repositary.Implementation
 
         public async Task<IEnumerable<InsuranceClaim>> GetByStatusAsync(string status)
         {
+            if (!Enum.TryParse<ClaimStatus>(status, true, out var parsedStatus))
+            {
+                throw new ArgumentException($"Invalid claim status: {status}");
+            }
+
             return await _context.InsuranceClaims
-                .Where(c => c.ClaimStatus == status)
+                .Where(c => c.ClaimStatus == parsedStatus)
                 .Include(c => c.User)
                 .Include(c => c.Proposal)
                 .ToListAsync();
         }
+
 
         public async Task AddAsync(InsuranceClaim claim)
         {

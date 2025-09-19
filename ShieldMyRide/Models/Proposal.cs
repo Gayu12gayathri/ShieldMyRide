@@ -20,7 +20,7 @@ namespace ShieldMyRide.Models
         public int UserId { get; set; }
         [Required]
         public int PolicyId { get; set; }
-        public int QuoteId { get; set; }
+        //public int QuoteId { get; set; }
 
         [Required(ErrorMessage = "Vehicle type is required")]
         [StringLength(50, ErrorMessage = "Vehicle type cannot exceed 50 characters")]
@@ -46,11 +46,13 @@ namespace ShieldMyRide.Models
 
         // Navigation
         [JsonIgnore]
-        public User? User{ get; set; }
+        public User? User { get; set; }
         [JsonIgnore]
-        public Policy? Policy { get; set; }
+
+        public Policy? Policy { get; set; }   // ✅ template policy (optional)
+
         [JsonIgnore]
-        public Quote? Quote { get; set; }
+        public ICollection<Quote> Quotes { get; set; } = new List<Quote>(); 
 
         [JsonIgnore]
         public ICollection<PolicyDocument>? PolicyDocuments { get; set; }

@@ -28,11 +28,15 @@ namespace ShieldMyRide.Controllers
             try
             {
                 var payments = await _paymentRepository.GetAllAsync();
+                if (payments == null || !payments.Any())
+                    return NotFound(new { message = "No payments found." });
+
                 return Ok(payments);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { message = "Failed to fetch payments.", details = ex.Message });
             }
         }
 
@@ -42,12 +46,14 @@ namespace ShieldMyRide.Controllers
             try
             {
                 var payment = await _paymentRepository.GetByIdAsync(id);
-                if (payment == null) return NotFound();
+                if (payment == null)
+                    return NotFound(new { message = $"No payment found with ID {id}." });
                 return Ok(payment);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { message = $"Error fetching payment with ID {id}.", details = ex.Message });
             }
         }
 
@@ -56,14 +62,26 @@ namespace ShieldMyRide.Controllers
         {
             try
             {
+                if (payment == null)
+                    return BadRequest(new { message = "Payment data cannot be null." });
+
+                // Business rule: prevent duplicate payments with same transaction reference
+                if (await _paymentRepository.TransactionExistsAsync(payment.TransactionId))
+                    return Conflict(new { message = $"Payment with Transaction ID {payment.TransactionId} already exists." });
+
                 payment.PaymentDate = DateTime.Now;
 
                 await _paymentRepository.AddAsync(payment);
                 return CreatedAtAction(nameof(GetPayment), new { id = payment.PaymentId }, payment);
             }
+            catch (DbUpdateException dbEx)
+            {
+                return BadRequest(new { message = "Database error while creating payment.", details = dbEx.InnerException?.Message ?? dbEx.Message });
+            }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { message = "Unexpected error while creating payment.", details = ex.Message });
             }
         }
 
@@ -73,7 +91,8 @@ namespace ShieldMyRide.Controllers
             try
             {
                 var existingPayment = await _paymentRepository.GetByIdAsync(id);
-                if (existingPayment == null) return NotFound();
+                if (existingPayment == null)
+                    return NotFound(new { message = $"Payment with ID {id} not found." });
 
                 existingPayment.AmountPaid = payment.AmountPaid;
                 existingPayment.PaymentStatus = payment.PaymentStatus;
@@ -81,9 +100,14 @@ namespace ShieldMyRide.Controllers
                 await _paymentRepository.UpdateAsync(existingPayment);
                 return Ok(existingPayment);
             }
+            catch (DbUpdateException dbEx)
+            {
+                return BadRequest(new { message = "Database error while updating payment.", details = dbEx.InnerException?.Message ?? dbEx.Message });
+            }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { message = "Unexpected error while updating payment.", details = ex.Message });
             }
         }
 
@@ -93,14 +117,20 @@ namespace ShieldMyRide.Controllers
             try
             {
                 var payment = await _paymentRepository.GetByIdAsync(id);
-                if (payment == null) return NotFound();
+                if (payment == null)
+                    return NotFound(new { message = $"Payment with ID {id} not found." });
 
                 await _paymentRepository.DeleteAsync(id);
                 return NoContent();
             }
+            catch (DbUpdateException dbEx)
+            {
+                return BadRequest(new { message = "Database error while deleting payment.", details = dbEx.InnerException?.Message ?? dbEx.Message });
+            }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { message = "Unexpected error while deleting payment.", details = ex.Message });
             }
         }
     }

@@ -67,6 +67,13 @@ namespace ShieldMyRide.Context
                 .HasForeignKey(o => o.ProposalId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            // ✅ Proposal → Quote (1-to-many)
+            modelBuilder.Entity<Proposal>()
+                 .HasMany(p => p.Quotes)
+                 .WithOne(q => q.Proposal)
+                 .HasForeignKey(q => q.ProposalId)
+                 .OnDelete(DeleteBehavior.Restrict);
+
             // InsuranceClaim → OfficerAssignments
             modelBuilder.Entity<InsuranceClaim>()
                 .HasMany(c => c.OfficerAssignments)
@@ -74,14 +81,14 @@ namespace ShieldMyRide.Context
                 .HasForeignKey(o => o.ClaimId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            
 
-            // Quote → Proposal (assuming Proposal has QuoteId)
-            modelBuilder.Entity<Quote>()
-                .HasMany(q => q.Proposal)
-                .WithOne(p => p.Quote)
-                .HasForeignKey(p => p.QuoteId)
-                .OnDelete(DeleteBehavior.Restrict);
+
+            //// Quote → Proposal (assuming Proposal has QuoteId)
+            //modelBuilder.Entity<Quote>()
+            //    .HasMany(q => q.Proposal)
+            //    .WithOne(p => p.Quote)
+            //    .HasForeignKey(p => p.QuoteId)
+            //    .OnDelete(DeleteBehavior.Restrict);
 
             // Policy → PolicyDocument
             modelBuilder.Entity<Policy>()
@@ -93,6 +100,11 @@ namespace ShieldMyRide.Context
             modelBuilder.Entity<Proposal>()
                 .Property(p => p.ProposalStatus)
                 .HasConversion<string>();
+
+            modelBuilder.Entity<InsuranceClaim>()
+                .Property(c => c.ClaimStatus)
+                .HasConversion<string>();
+
         }
     }
 }

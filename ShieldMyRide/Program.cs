@@ -103,6 +103,13 @@ namespace ShieldMyRide
                     }
                 });
             });
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", b =>
+                    b.AllowAnyOrigin()
+                     .AllowAnyMethod()
+                     .AllowAnyHeader());
+            });
 
             var app = builder.Build();
 
@@ -119,7 +126,7 @@ namespace ShieldMyRide
 
 
             app.UseAuthorization();
-
+            app.UseCors("AllowAll");
             app.MapControllers();
 
             app.Run();

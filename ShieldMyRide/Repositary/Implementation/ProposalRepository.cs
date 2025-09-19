@@ -21,7 +21,7 @@ namespace ShieldMyRide.Repositary.Implementation
             return await _context.Proposals
                 .Include(p => p.User)
                 .Include(p => p.Policy)
-                .Include(p => p.Quote)
+                .Include(p => p.Quotes)
                 .FirstOrDefaultAsync(p => p.ProposalId == id);
         }
 

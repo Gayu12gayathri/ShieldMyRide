@@ -83,9 +83,9 @@ namespace ShieldMyRide.Controllers.AuthControllers
                 int userId = int.Parse(userIdClaim);
 
                 var quotes = await _context.Quotes
-                    .Include(q => q.Proposal)
-                    .Where(q => q.Proposal.Any(p => p.UserId == userId))
-                    .ToListAsync();
+                     .Include(q => q.Proposal)
+                     .Where(q => q.Proposal.UserId == userId) // ✅ direct check
+                     .ToListAsync();
 
                 return Ok(_mapper.Map<IEnumerable<QuoteGetDTO>>(quotes));
             }
@@ -109,7 +109,7 @@ namespace ShieldMyRide.Controllers.AuthControllers
                 var policies = await _context.Policies
                     .Include(p => p.PolicyDocuments)
                     .Include(p => p.Proposals)
-                    .Where(p => p.Proposals.Any(pr => pr.UserId == userId))
+                    .Where(p => p.Proposals.Any(pr => pr.UserId == userId)) // ✅ correct
                     .ToListAsync();
 
                 return Ok(_mapper.Map<IEnumerable<PolicyGetDTO>>(policies));

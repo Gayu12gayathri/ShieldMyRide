@@ -69,7 +69,8 @@ namespace ShieldMyRide.Controllers
                     return BadRequest("Claim cannot be submitted because the proposal is not approved.");
 
                 claim.ClaimDate = DateTime.Now;
-                claim.ClaimStatus = "Submitted";
+                claim.ClaimStatus = ClaimStatus.Pending;
+
 
                 await _claimRepository.AddAsync(claim);
                 return CreatedAtAction(nameof(GetClaim), new { id = claim.ClaimId }, claim);

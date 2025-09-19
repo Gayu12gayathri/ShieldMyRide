@@ -4,6 +4,16 @@ using ShieldMyRide.Authentication;
 
 namespace ShieldMyRide.Models
 {
+    public enum ClaimStatus
+    {
+        Submitted,
+        Pending,    // when user submits the claim
+        UnderReview,// officer/admin is reviewing
+        Approved,   // claim approved
+        Rejected,   // claim rejected
+        Settled     // claim amount disbursed
+    }
+
     public class InsuranceClaim
     {
         [Key]
@@ -18,8 +28,8 @@ namespace ShieldMyRide.Models
         public string? ClaimDescription { get; set; }
         [Required, Range(1, double.MaxValue)]
         public decimal ClaimAmount { get; set; }
-        [Required, StringLength(50)]
-        public string? ClaimStatus { get; set; }
+        //[Required, StringLength(50)]
+        public ClaimStatus ClaimStatus { get; set; }
         [Range(0, double.MaxValue)]
 
         public decimal SettlementAmount { get; set; }

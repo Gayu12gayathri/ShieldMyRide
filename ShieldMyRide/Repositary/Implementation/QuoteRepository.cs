@@ -17,7 +17,7 @@ namespace ShieldMyRide.Repositary.Implementation
         public async Task<Quote> GetByIdAsync(int id)
         {
             return await _context.Quotes
-                .Include(q => q.Policy)
+               .Include(q => q.Proposal)
                 .FirstOrDefaultAsync(q => q.QuoteId == id);
         }
 

@@ -7,7 +7,8 @@ namespace ShieldMyRide.Models
     {
         [Key]
         public int QuoteId { get; set; }
-
+        [Required]
+        public int ProposalId { get; set; }
         [Required]
         public int PolicyId { get; set; }
 
@@ -17,7 +18,7 @@ namespace ShieldMyRide.Models
         [Required, Range(1, double.MaxValue)]
         public decimal PremiumAmount { get; set; }
 
-        [Required,StringLength(500)]
+        [Required, StringLength(500)]
         public string CoverageDetails { get; set; }
 
         [Required]
@@ -29,10 +30,12 @@ namespace ShieldMyRide.Models
         // Navigation
         [JsonIgnore]
         public Policy? Policy { get; set; }
-        //public Proposal Proposal { get; set; }
+        
         // Quote.cs
         [JsonIgnore]
-        public ICollection<Proposal>? Proposal { get; set; } = new List<Proposal>();
+        public Proposal? Proposal { get; set; }
+
+        //public ICollection<Proposal>? Proposal { get; set; } = new List<Proposal>();
         [JsonIgnore]
 
         public ICollection<Payment>? Payments { get; set; }

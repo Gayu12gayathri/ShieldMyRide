@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ShieldMyRide.DTOs.ProposalDTO;
 using ShieldMyRide.Models;
-using ShieldMyRide.Repositary.Implementation;
 using ShieldMyRide.Repositary.Interfaces;
 using ShieldMyRide.Services;
 
@@ -21,8 +20,11 @@ namespace ShieldMyRide.Controllers
         private readonly IPaymentService _paymentService;
         private readonly IMapper _mapper;
 
-        public ProposalsController(IProposalRepository proposalRepository, IOfficerAssignmentRepository officerAssignmentRepository, IPremiumCalculator premiumCalculator,
-            IPaymentService paymentService, IMapper mapper)
+        public ProposalsController(IProposalRepository proposalRepository,
+                                   IOfficerAssignmentRepository officerAssignmentRepository,
+                                   IPremiumCalculator premiumCalculator,
+                                   IPaymentService paymentService,
+                                   IMapper mapper)
         {
             _proposalRepository = proposalRepository;
             _officerAssignmentRepository = officerAssignmentRepository;
@@ -37,11 +39,14 @@ namespace ShieldMyRide.Controllers
             try
             {
                 var proposals = await _proposalRepository.GetAllAsync();
+                if (proposals == null || !proposals.Any())
+                    return NotFound("No proposals found.");
+
                 return Ok(proposals);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(500, $"Error fetching proposals: {ex.Message}");
             }
         }
 
@@ -52,32 +57,16 @@ namespace ShieldMyRide.Controllers
             try
             {
                 var proposal = await _proposalRepository.GetByIdAsync(id);
-                if (proposal == null) return NotFound();
+                if (proposal == null)
+                    return NotFound($"Proposal with ID {id} not found.");
+
                 return Ok(proposal);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(500, $"Error fetching proposal: {ex.Message}");
             }
         }
-
-        //[HttpPost]
-        //[Authorize(Roles = "User")]
-        //public async Task<IActionResult> CreateProposal([FromBody] Proposal proposal)
-        //{
-        //    try
-        //    {
-        //        proposal.ProposalStatus = ProposalStatus.Submitted;
-        //        proposal.CreatedAt = DateTime.Now;
-
-        //        await _proposalRepository.AddAsync(proposal);
-        //        return CreatedAtAction(nameof(GetProposal), new { id = proposal.ProposalId }, proposal);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, $"Internal server error: {ex.Message}");
-        //    }
-        //}
 
         [HttpPost]
         [Authorize(Roles = "User")]
@@ -85,12 +74,14 @@ namespace ShieldMyRide.Controllers
         {
             try
             {
-                // Calculate premium using PremiumCalculator
+                if (proposal == null)
+                    return BadRequest("Proposal data is required.");
+
                 string breakdown;
                 decimal premium = _premiumCalculator.Calculate(
                     proposal.VehicleType ?? "car",
                     proposal.VehicleAge,
-                    proposal.Policy?.CoverageAmount ?? proposal.Premium, // fallback if no vehicleValue field exists
+                    proposal.Policy?.CoverageAmount ?? proposal.Premium,
                     out breakdown
                 );
 
@@ -112,7 +103,7 @@ namespace ShieldMyRide.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(500, $"Error creating proposal: {ex.Message}");
             }
         }
 
@@ -123,7 +114,8 @@ namespace ShieldMyRide.Controllers
             try
             {
                 var existingProposal = await _proposalRepository.GetByIdAsync(id);
-                if (existingProposal == null) return NotFound();
+                if (existingProposal == null)
+                    return NotFound($"Proposal with ID {id} not found.");
 
                 existingProposal.VehicleType = proposal.VehicleType;
                 existingProposal.VehicleRegNo = proposal.VehicleRegNo;
@@ -135,7 +127,7 @@ namespace ShieldMyRide.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(500, $"Error updating proposal: {ex.Message}");
             }
         }
 
@@ -146,9 +138,9 @@ namespace ShieldMyRide.Controllers
             try
             {
                 var existingProposal = await _proposalRepository.GetByIdAsync(id);
-                if (existingProposal == null) return NotFound();
+                if (existingProposal == null)
+                    return NotFound($"Proposal with ID {id} not found.");
 
-                // MANUALLY update the status - don't rely on AutoMapper
                 existingProposal.ProposalStatus = dto.ProposalStatus;
 
                 await _proposalRepository.UpdateAsync(existingProposal);
@@ -163,7 +155,7 @@ namespace ShieldMyRide.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(500, $"Error reviewing proposal: {ex.Message}");
             }
         }
 
@@ -172,6 +164,10 @@ namespace ShieldMyRide.Controllers
         {
             try
             {
+                var proposal = await _proposalRepository.GetByIdAsync(id);
+                if (proposal == null)
+                    return NotFound($"Proposal with ID {id} not found.");
+
                 var success = await _paymentService.ProcessPayment(id, amount);
                 if (success)
                     return Ok($"Payment successful! Proposal {id} is now active.");
@@ -190,14 +186,15 @@ namespace ShieldMyRide.Controllers
             try
             {
                 var proposal = await _proposalRepository.GetByIdAsync(id);
-                if (proposal == null) return NotFound();
+                if (proposal == null)
+                    return NotFound($"Proposal with ID {id} not found.");
 
                 await _proposalRepository.DeleteAsync(id);
                 return NoContent();
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(500, $"Error deleting proposal: {ex.Message}");
             }
         }
     }

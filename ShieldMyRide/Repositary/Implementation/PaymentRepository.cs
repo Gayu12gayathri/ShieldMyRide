@@ -51,6 +51,16 @@ namespace ShieldMyRide.Repositary.Implementation
                 .Include(p => p.User)
                 .ToListAsync();
         }
+        public async Task<Payment> GetByTransactionIdAsync(string transactionId)
+        {
+            return await _context.Payments.FirstOrDefaultAsync(p => p.TransactionId == transactionId);
+        }
+
+        public async Task<bool> TransactionExistsAsync(string transactionId)
+        {
+            return await _context.Payments.AnyAsync(p => p.TransactionId == transactionId);
+        }
+
 
         public async Task AddAsync(Payment payment)
         {

@@ -12,6 +12,9 @@ namespace ShieldMyRide.Models
         public int UserID { get; set; }
         [Required]
         public int ProposalID { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string TransactionId { get; set; } = Guid.NewGuid().ToString();
         [Required,Range(1,double.MaxValue)]
         public decimal AmountPaid { get; set; }
         [Required, DataType(DataType.Date)]

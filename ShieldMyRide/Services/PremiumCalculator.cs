@@ -11,25 +11,30 @@ namespace ShieldMyRide.Services
     {
         public decimal Calculate(string vehicleType, int vehicleAge, decimal vehicleValue, out string breakdown)
         {
-            // base = 2% of vehicle value
-            decimal basePremium = vehicleValue * 0.02m;
+            // 1. Base Premium (3% of vehicle value)
+            decimal basePremium = vehicleValue * 0.03m;
 
-            // Vehicle risk factor
-            decimal vehicleFactor = vehicleType.ToLower() switch
+            // 2. Risk Loading
+            decimal riskLoading = 0;
+            riskLoading += vehicleType.ToLower() switch
             {
-                "car" => 1.2m,
-                "bike" => 0.8m,
-                "truck" => 1.5m,
-                _ => 1.0m
+                "car" => basePremium * 0.20m, // 20% extra
+                "bike" => basePremium * 0.10m, // 10% extra
+                "truck" => basePremium * 0.30m, // 30% extra
+                _ => basePremium * 0.15m
             };
 
-            // Age factor: older vehicles may cost more
-            decimal ageFactor = vehicleAge > 10 ? 1.3m : 1.0m;
+            riskLoading += vehicleAge > 10 ? basePremium * 0.15m : basePremium * 0.05m;
 
-            decimal premium = basePremium * vehicleFactor * ageFactor;
+            // 3. Fixed Charges
+            decimal fixedCharges = 500m;
 
-            breakdown = $"Base({vehicleValue} * 0.02): {basePremium}, VehicleFactor: {vehicleFactor}, AgeFactor: {ageFactor}";
+            // 4. Final Premium
+            decimal premium = basePremium + riskLoading + fixedCharges;
+
+            breakdown = $"Base: {basePremium}, Risk Loading: {riskLoading}, Fixed: {fixedCharges}, Total: {premium}";
             return premium;
         }
+
     }
 }

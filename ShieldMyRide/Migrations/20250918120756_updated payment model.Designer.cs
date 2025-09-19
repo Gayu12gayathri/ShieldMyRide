@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShieldMyRide.Context;
 
@@ -11,9 +12,11 @@ using ShieldMyRide.Context;
 namespace ShieldMyRide.Migrations
 {
     [DbContext(typeof(MyDBContext))]
-    partial class MyDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250918120756_updated payment model")]
+    partial class updatedpaymentmodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -247,7 +250,8 @@ namespace ShieldMyRide.Migrations
 
                     b.Property<string>("ClaimStatus")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("ProposalId")
                         .HasColumnType("int");
@@ -457,6 +461,9 @@ namespace ShieldMyRide.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("QuoteId")
+                        .HasColumnType("int");
+
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
@@ -475,6 +482,8 @@ namespace ShieldMyRide.Migrations
                     b.HasKey("ProposalId");
 
                     b.HasIndex("PolicyId");
+
+                    b.HasIndex("QuoteId");
 
                     b.HasIndex("UserId");
 
@@ -506,17 +515,12 @@ namespace ShieldMyRide.Migrations
                     b.Property<decimal>("PremiumAmount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("ProposalId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ValidTill")
                         .HasColumnType("datetime2");
 
                     b.HasKey("QuoteId");
 
                     b.HasIndex("PolicyId");
-
-                    b.HasIndex("ProposalId");
 
                     b.ToTable("Quotes");
                 });
@@ -722,6 +726,12 @@ namespace ShieldMyRide.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ShieldMyRide.Models.Quote", "Quote")
+                        .WithMany("Proposal")
+                        .HasForeignKey("QuoteId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("ShieldMyRide.Models.User", "User")
                         .WithMany("Proposals")
                         .HasForeignKey("UserId")
@@ -729,6 +739,8 @@ namespace ShieldMyRide.Migrations
                         .IsRequired();
 
                     b.Navigation("Policy");
+
+                    b.Navigation("Quote");
 
                     b.Navigation("User");
                 });
@@ -741,15 +753,7 @@ namespace ShieldMyRide.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ShieldMyRide.Models.Proposal", "Proposal")
-                        .WithMany("Quotes")
-                        .HasForeignKey("ProposalId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.Navigation("Policy");
-
-                    b.Navigation("Proposal");
                 });
 
             modelBuilder.Entity("ShieldMyRide.Models.InsuranceClaim", b =>
@@ -773,13 +777,13 @@ namespace ShieldMyRide.Migrations
                     b.Navigation("OfficerAssignments");
 
                     b.Navigation("PolicyDocuments");
-
-                    b.Navigation("Quotes");
                 });
 
             modelBuilder.Entity("ShieldMyRide.Models.Quote", b =>
                 {
                     b.Navigation("Payments");
+
+                    b.Navigation("Proposal");
                 });
 
             modelBuilder.Entity("ShieldMyRide.Models.User", b =>

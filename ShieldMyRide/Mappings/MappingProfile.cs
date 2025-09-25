@@ -20,18 +20,27 @@ namespace ShieldMyRide.Mappings
             CreateMap<ApplicationUser, AdminDTo>();
 
             // Customer Mapping (with masking)
-            CreateMap<ApplicationUser, CustomerDTO>()
+            CreateMap<User, CustomerDTO>()
+                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.UserId.ToString()))  // convert int → string
+                 .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.FirstName + "_" + src.LastName))
+                  .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                  .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PhoneNumber))
                 .ForMember(dest => dest.AadhaarMasked,
-                    opt => opt.MapFrom(src => MaskingHelper.MaskAadhaar(src.AadhaarHash)))
+                    opt => opt.MapFrom(src => MaskingHelper.MaskAadhaar(src.AadhaarNumber)))
                 .ForMember(dest => dest.PanMasked,
-                    opt => opt.MapFrom(src => MaskingHelper.MaskPan(src.PanHash)));
+                    opt => opt.MapFrom(src => MaskingHelper.MaskPan(src.PanNumber)));
 
             // Officer Mapping (with masking)
-            CreateMap<ApplicationUser, OfficerDeatilDTO>()
-                .ForMember(dest => dest.AadhaarMasked,
-                    opt => opt.MapFrom(src => MaskingHelper.MaskAadhaar(src.AadhaarHash)))
-                .ForMember(dest => dest.PanMasked,
-                    opt => opt.MapFrom(src => MaskingHelper.MaskPan(src.PanHash)));
+            CreateMap<User, OfficerDeatilDTO>()
+                    .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.UserId.ToString())) // convert int → string
+                    .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.FirstName + "_" + src.LastName))
+                    .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                    .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PhoneNumber))
+                    .ForMember(dest => dest.AadhaarMasked,
+                        opt => opt.MapFrom(src => MaskingHelper.MaskAadhaar(src.AadhaarNumber)))
+                    .ForMember(dest => dest.PanMasked,
+                        opt => opt.MapFrom(src => MaskingHelper.MaskPan(src.PanNumber)));
+
 
             //  OfficerAdminDTO
             CreateMap<OfficerAssignment, OfficerAdminDTO>()
@@ -97,6 +106,16 @@ namespace ShieldMyRide.Mappings
             CreateMap<OfficerAssignment, OfficerAssignmentDTO>()
                 .ForMember(dest => dest.OfficerName,
                     opt => opt.MapFrom(src => src.Officer.FirstName + " " + src.Officer.LastName));
+
+            CreateMap<OfficerAssignmentDTO, OfficerAssignment>()
+                .ForMember(dest => dest.OfficerAssignmentId, opt => opt.MapFrom(src => src.OfficerAssignmentId))
+                .ForMember(dest => dest.OfficerId, opt => opt.MapFrom(src => src.OfficerId))
+                .ForMember(dest => dest.ProposalId, opt => opt.MapFrom(src => src.ProposalId))
+                .ForMember(dest => dest.ClaimId, opt => opt.MapFrom(src => src.ClaimId))
+                .ForMember(dest => dest.Remarks, opt => opt.MapFrom(src => src.Remarks))
+                .ForMember(dest => dest.AssignedDate, opt => opt.MapFrom(src => src.AssignedDate))
+                .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status));
+
 
 
         }

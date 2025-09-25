@@ -105,6 +105,10 @@ namespace ShieldMyRide.Context
                 .Property(c => c.ClaimStatus)
                 .HasConversion<string>();
 
+            modelBuilder.Entity<OfficerAssignment>()
+                        .Property(o => o.Status)
+                        .HasConversion<string>();  // store enum as string
+
         }
     }
 }

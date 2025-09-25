@@ -20,6 +20,17 @@ namespace ShieldMyRide
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            //log4net
+            Directory.CreateDirectory(Path.Combine(builder.Environment.ContentRootPath, "Logs"));
+            builder.Logging.ClearProviders();
+            builder.Logging.AddConsole();
+            builder.Logging.AddDebug();
+            builder.Logging.AddLog4Net("log4net.config");
+            var logsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");
+            Directory.CreateDirectory(logsPath);
+            Console.WriteLine("Logs Directory: " + logsPath);
+
             builder.Services.AddAutoMapper(typeof(MappingProfile));
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             // Add services to the container.
@@ -27,11 +38,13 @@ namespace ShieldMyRide
                             options.UseSqlServer(builder.Configuration.GetConnectionString("myconnection")));
             //builder.Services.AddControllers();
             builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
-        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
-    });
+                            .AddJsonOptions(options =>
+                            {
+                                options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+                                options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+                            });
+
+            //Repositary implemenations
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IOfficerAssignmentRepository, OfficerAssignmentsRepository>();
             builder.Services.AddScoped<IPolicyRepository, PolicyRepository>();

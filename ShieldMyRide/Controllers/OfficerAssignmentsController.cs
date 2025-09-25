@@ -6,10 +6,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ShieldMyRide.Context;
 using ShieldMyRide.DTOs.OfficerAssignmentDTO;
 using ShieldMyRide.Models;
-using ShieldMyRide.Repositary.Implementation;
 using ShieldMyRide.Repositary.Interfaces;
 
 namespace ShieldMyRide.Controllers
@@ -19,12 +17,16 @@ namespace ShieldMyRide.Controllers
     public class OfficerAssignmentsController : ControllerBase
     {
         private readonly IOfficerAssignmentRepository _assignmentRepository;
+        private readonly IUserRepository _userRepository;
 
-        public OfficerAssignmentsController(IOfficerAssignmentRepository assignmentRepository)
+        public OfficerAssignmentsController(
+            IOfficerAssignmentRepository assignmentRepository,
+            IUserRepository userRepository)
         {
             _assignmentRepository = assignmentRepository;
-        }
-
+            _userRepository = userRepository;
+        } 
+        // GET all assignments (Admin & Officer)
         [HttpGet]
         [Authorize(Roles = "Officer,Admin")]
         public async Task<IActionResult> GetAllAssignments()
@@ -33,7 +35,7 @@ namespace ShieldMyRide.Controllers
             {
                 var assignments = await _assignmentRepository.GetAllAsync();
 
-                var result = assignments.Select(a => new OfficerAssignmentDTO
+                var dtoList = assignments.Select(a => new OfficerAssignmentDTO
                 {
                     OfficerAssignmentId = a.OfficerAssignmentId,
                     OfficerId = a.OfficerId,
@@ -42,10 +44,10 @@ namespace ShieldMyRide.Controllers
                     ClaimId = a.ClaimId,
                     Remarks = a.Remarks,
                     AssignedDate = a.AssignedDate,
-                    Status = a.Status
-                });
+                    Status = a.Status // use entity value to avoid cast issues
+                }).ToList();
 
-                return Ok(result);
+                return Ok(dtoList);
             }
             catch (Exception ex)
             {
@@ -54,6 +56,7 @@ namespace ShieldMyRide.Controllers
             }
         }
 
+        // GET assignment by ID (Officer)
         [HttpGet("{id}")]
         [Authorize(Roles = "Officer")]
         public async Task<IActionResult> GetAssignment(int id)
@@ -80,28 +83,47 @@ namespace ShieldMyRide.Controllers
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError,
-                     new { message = $"Error fetching assignment with ID {id}.", details = ex.Message });
+                    new { message = $"Error fetching assignment with ID {id}.", details = ex.Message });
             }
         }
 
+        // CREATE assignment (Officer or Admin can assign officers)
         [HttpPost]
-        [Authorize(Roles = "Officer")]
+        [Authorize(Roles = "Officer,Admin")]
         public async Task<IActionResult> CreateAssignment([FromBody] OfficerAssignment assignment)
         {
             try
             {
-                assignment.AssignedDate = DateTime.Now;
-                assignment.Status = "Assigned";
 
+                // Fetch officer details from the user repository
+                var officer = await _userRepository.GetByIdAsync(assignment.OfficerId);
+
+                // Check if the officer exists and has the "Officer" role
+                if (officer == null || officer.Role != "Officer")
+                {
+                    return BadRequest(new { message = "Only officers can be assigned." });
+                }
+
+                // Proceed with creating the assignment
+                assignment.AssignedDate = DateTime.Now;
+                // Validate Status: if invalid, default to Assigned
+                if (!Enum.IsDefined(typeof(OfficerStatus), assignment.Status))
+                    assignment.Status = OfficerStatus.Assigned;
+
+                // Add the assignment to the repository
                 await _assignmentRepository.AddAsync(assignment);
+
                 return CreatedAtAction(nameof(GetAssignment), new { id = assignment.OfficerAssignmentId }, assignment);
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error creating assignment: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { message = "Error creating assignment.", details = ex.Message });
             }
         }
 
+
+        // UPDATE assignment (Officer)
         [HttpPut("{id}")]
         [Authorize(Roles = "Officer")]
         public async Task<IActionResult> UpdateAssignment(int id, [FromBody] OfficerAssignment assignment)
@@ -112,22 +134,22 @@ namespace ShieldMyRide.Controllers
                 if (existingAssignment == null) return NotFound();
 
                 existingAssignment.Remarks = assignment.Remarks;
-                existingAssignment.Status = assignment.Status;
+
+                // Safely assign enum value
+                if (Enum.IsDefined(typeof(OfficerStatus), assignment.Status))
+                    existingAssignment.Status = assignment.Status;
 
                 await _assignmentRepository.UpdateAsync(existingAssignment);
                 return Ok(existingAssignment);
             }
-            catch (DbUpdateException dbEx)
-            {
-                return BadRequest(new { message = "Database error while updating assignment.", details = dbEx.InnerException?.Message ?? dbEx.Message });
-            }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError,
-                    new { message = "Unexpected error while creating assignment.", details = ex.Message });
+                    new { message = $"Error updating assignment with ID {id}.", details = ex.Message });
             }
         }
 
+        // DELETE assignment (Officer)
         [HttpDelete("{id}")]
         [Authorize(Roles = "Officer")]
         public async Task<IActionResult> DeleteAssignment(int id)
@@ -140,13 +162,10 @@ namespace ShieldMyRide.Controllers
                 await _assignmentRepository.DeleteAsync(id);
                 return NoContent();
             }
-            catch (DbUpdateException dbEx)
-            {
-                return BadRequest(new { message = "Database error while deleting assignment.", details = dbEx.InnerException?.Message ?? dbEx.Message });
-            }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error deleting assignment: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { message = $"Error deleting assignment with ID {id}.", details = ex.Message });
             }
         }
     }

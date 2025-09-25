@@ -69,7 +69,11 @@ namespace ShieldMyRide.Controllers
                     return BadRequest("Claim cannot be submitted because the proposal is not approved.");
 
                 claim.ClaimDate = DateTime.Now;
-                claim.ClaimStatus = ClaimStatus.Pending;
+
+                // Validate Status: if invalid, default to Assigned
+                if (!Enum.IsDefined(typeof(ClaimStatus), ClaimStatus.Pending))
+                     claim.ClaimStatus = ClaimStatus.Pending;
+
 
 
                 await _claimRepository.AddAsync(claim);
@@ -85,7 +89,7 @@ namespace ShieldMyRide.Controllers
 
         // UPDATE CLAIM - Officer Only
  
-        [Authorize(Roles = "Officer")]
+        [Authorize(Roles = "Officer,User")]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateClaim(int id, [FromBody] InsuranceClaim claim)
         {

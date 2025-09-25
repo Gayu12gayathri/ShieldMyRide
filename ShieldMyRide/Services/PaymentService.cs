@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using ShieldMyRide.Models;
 using ShieldMyRide.Repositary.Interfaces;
@@ -8,6 +9,7 @@ namespace ShieldMyRide.Services
     public interface IPaymentService
     {
         Task<bool> ProcessPayment(int proposalId, decimal amount);
+        Task<decimal> GetBalanceAmount(int proposalId);
     }
 
     public class PaymentService : IPaymentService
@@ -21,17 +23,19 @@ namespace ShieldMyRide.Services
             _paymentRepo = paymentRepo;
         }
 
+        // Process payment (supports partial payments)
         public async Task<bool> ProcessPayment(int proposalId, decimal amount)
         {
             var proposal = await _proposalRepo.GetByIdAsync(proposalId);
-            if (proposal == null || proposal.Premium != amount)
+            if (proposal == null)
                 return false;
 
-            // Update proposal status
-            proposal.ProposalStatus = ProposalStatus.Active;
-            await _proposalRepo.UpdateAsync(proposal);
+            var balance = await GetBalanceAmount(proposalId);
 
-            // Record payment
+            if (amount <= 0 || amount > balance)
+                return false; // Cannot pay negative or more than remaining balance
+
+            // Record the payment
             var payment = new Payment
             {
                 ProposalID = proposal.ProposalId,
@@ -42,8 +46,29 @@ namespace ShieldMyRide.Services
             };
             await _paymentRepo.AddAsync(payment);
 
-            // TODO: trigger document generation + email
+            // Update proposal status if fully paid
+            var newBalance = balance - amount;
+            if (newBalance <= 0)
+            {
+                proposal.ProposalStatus = ProposalStatus.Active; // Fully paid
+                await _proposalRepo.UpdateAsync(proposal);
+            }
+
             return true;
+        }
+
+        // Get remaining balance
+        public async Task<decimal> GetBalanceAmount(int proposalId)
+        {
+            var proposal = await _proposalRepo.GetByIdAsync(proposalId);
+            if (proposal == null)
+                return 0;
+
+            var payments = await _paymentRepo.GetByProposalIdAsync(proposalId);
+            var totalPaid = payments?.Sum(p => p.AmountPaid) ?? 0;
+
+            var balance = proposal.Premium - totalPaid;
+            return balance < 0 ? 0 : balance; // Ensure balance is not negative
         }
     }
 }

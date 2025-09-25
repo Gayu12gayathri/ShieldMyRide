@@ -1,4 +1,6 @@
-﻿namespace ShieldMyRide.DTOs.OfficerAssignmentDTO
+﻿using ShieldMyRide.Models;
+
+namespace ShieldMyRide.DTOs.OfficerAssignmentDTO
 {
     public class OfficerDTO
     {
@@ -11,7 +13,7 @@
         public int? ClaimId { get; set; }
         public DateTime AssignedAt { get; set; }
         public string? Remarks { get; set; }
-        public string? Status { get; set; }   // current status (e.g. Pending, Approved, Rejected)
+        public OfficerStatus Status { get; set; }   // current status (e.g. Pending, Approved, Rejected)
 
 
     }

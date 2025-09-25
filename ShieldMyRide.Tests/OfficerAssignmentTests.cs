@@ -13,155 +13,146 @@ namespace ShieldMyRide.Tests.Controllers
     [TestFixture]
     public class OfficerAssignmentsTests
     {
-        private Mock<IOfficerAssignmentRepository> _mockRepository;
+        private Mock<IOfficerAssignmentRepository> _mockAssignmentRepo;
+        private Mock<IUserRepository> _mockUserRepo;
         private OfficerAssignmentsController _controller;
 
         [SetUp]
         public void Setup()
         {
-            _mockRepository = new Mock<IOfficerAssignmentRepository>();
-            _controller = new OfficerAssignmentsController(_mockRepository.Object);
+            _mockAssignmentRepo = new Mock<IOfficerAssignmentRepository>();
+            _mockUserRepo = new Mock<IUserRepository>();
+            _controller = new OfficerAssignmentsController(_mockAssignmentRepo.Object, _mockUserRepo.Object);
         }
 
+        // -------------------- GET ALL --------------------
         [Test]
         public async Task GetAllAssignments_ReturnsOk_WithAssignments()
         {
-            // Arrange
             var assignments = new List<OfficerAssignment>
             {
-                new OfficerAssignment { OfficerAssignmentId = 1, Status = "Assigned" },
-                new OfficerAssignment { OfficerAssignmentId = 2, Status = "Pending" }
+                new OfficerAssignment { OfficerAssignmentId = 1, Status = OfficerStatus.Assigned },
+                new OfficerAssignment { OfficerAssignmentId = 2, Status = OfficerStatus.InProgress }
             };
-            _mockRepository.Setup(r => r.GetAllAsync()).ReturnsAsync(assignments);
+            _mockAssignmentRepo.Setup(r => r.GetAllAsync()).ReturnsAsync(assignments);
 
-            // Act
             var result = await _controller.GetAllAssignments();
 
-            // Assert
             Assert.That(result, Is.InstanceOf<OkObjectResult>());
             var okResult = result as OkObjectResult;
             Assert.That(okResult.Value, Is.EqualTo(assignments));
         }
 
+        // -------------------- GET BY ID --------------------
         [Test]
         public async Task GetAssignment_ReturnsNotFound_WhenNotExists()
         {
-            // Arrange
-            _mockRepository.Setup(r => r.GetByIdAsync(It.IsAny<int>()))
-                .ReturnsAsync((OfficerAssignment)null);
+            _mockAssignmentRepo.Setup(r => r.GetByIdAsync(It.IsAny<int>()))
+                               .ReturnsAsync((OfficerAssignment)null);
 
-            // Act
             var result = await _controller.GetAssignment(99);
 
-            // Assert
             Assert.That(result, Is.InstanceOf<NotFoundResult>());
         }
 
         [Test]
         public async Task GetAssignment_ReturnsOk_WhenExists()
         {
-            // Arrange
-            var assignment = new OfficerAssignment { OfficerAssignmentId = 1, Status = "Assigned" };
-            _mockRepository.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(assignment);
+            var assignment = new OfficerAssignment { OfficerAssignmentId = 1, Status = OfficerStatus.Assigned };
+            _mockAssignmentRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(assignment);
 
-            // Act
             var result = await _controller.GetAssignment(1);
 
-            // Assert
             Assert.That(result, Is.InstanceOf<OkObjectResult>());
             var okResult = result as OkObjectResult;
             Assert.That(okResult.Value, Is.EqualTo(assignment));
         }
 
+        // -------------------- CREATE ASSIGNMENT --------------------
         [Test]
-        public async Task CreateAssignment_ReturnsCreatedAtAction()
+        public async Task CreateAssignment_ReturnsBadRequest_WhenAssignedUserIsNotOfficer()
         {
-            // Arrange
-            var assignment = new OfficerAssignment
-            {
-                OfficerAssignmentId = 1,
-                Remarks = "New",
-                Status = null
-            };
+            var assignment = new OfficerAssignment { OfficerId = 1, Remarks = "Test" };
+            var user = new User { UserId = 1, Role = "Admin" };
 
-            _mockRepository.Setup(r => r.AddAsync(It.IsAny<OfficerAssignment>()))
-                .Returns(Task.CompletedTask);
+            _mockUserRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(user);
 
-            // Act
             var result = await _controller.CreateAssignment(assignment);
 
-            // Assert
+            Assert.That(result, Is.InstanceOf<BadRequestObjectResult>());
+            var badRequest = result as BadRequestObjectResult;
+            Assert.That(badRequest.Value.ToString(), Does.Contain("Only officers can be assigned"));
+        }
+
+        [Test]
+        public async Task CreateAssignment_ReturnsCreatedAtAction_WhenOfficerIsAssigned()
+        {
+            var assignment = new OfficerAssignment { OfficerId = 2, Remarks = "Assigned" };
+            var officerUser = new User { UserId = 2, Role = "Officer" };
+
+            _mockUserRepo.Setup(r => r.GetByIdAsync(2)).ReturnsAsync(officerUser);
+            _mockAssignmentRepo.Setup(r => r.AddAsync(It.IsAny<OfficerAssignment>())).Returns(Task.CompletedTask);
+
+            var result = await _controller.CreateAssignment(assignment);
+
             Assert.That(result, Is.InstanceOf<CreatedAtActionResult>());
             var createdResult = result as CreatedAtActionResult;
             var returnedAssignment = createdResult.Value as OfficerAssignment;
 
-            Assert.That(returnedAssignment.Status, Is.EqualTo("Assigned"));
+            Assert.That(returnedAssignment.Status, Is.EqualTo(OfficerStatus.Assigned));
             Assert.That(returnedAssignment.AssignedDate, Is.Not.EqualTo(default(DateTime)));
         }
 
+        // -------------------- UPDATE ASSIGNMENT --------------------
         [Test]
         public async Task UpdateAssignment_ReturnsNotFound_WhenNotExists()
         {
-            // Arrange
-            _mockRepository.Setup(r => r.GetByIdAsync(1))
-                .ReturnsAsync((OfficerAssignment)null);
+            _mockAssignmentRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync((OfficerAssignment)null);
 
-            // Act
             var result = await _controller.UpdateAssignment(1, new OfficerAssignment());
 
-            // Assert
             Assert.That(result, Is.InstanceOf<NotFoundResult>());
         }
 
         [Test]
         public async Task UpdateAssignment_ReturnsOk_WhenExists()
         {
-            // Arrange
-            var assignment = new OfficerAssignment { OfficerAssignmentId = 1, Status = "Pending", Remarks = "Old" };
-            _mockRepository.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(assignment);
-            _mockRepository.Setup(r => r.UpdateAsync(It.IsAny<OfficerAssignment>()))
-                .Returns(Task.CompletedTask);
+            var assignment = new OfficerAssignment { OfficerAssignmentId = 1, Status = OfficerStatus.InProgress, Remarks = "Old" };
+            _mockAssignmentRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(assignment);
+            _mockAssignmentRepo.Setup(r => r.UpdateAsync(It.IsAny<OfficerAssignment>())).Returns(Task.CompletedTask);
 
-            var update = new OfficerAssignment { Status = "Approved", Remarks = "Updated" };
+            var update = new OfficerAssignment { Status = OfficerStatus.Approved, Remarks = "Updated" };
 
-            // Act
             var result = await _controller.UpdateAssignment(1, update);
 
-            // Assert
             Assert.That(result, Is.InstanceOf<OkObjectResult>());
             var okResult = result as OkObjectResult;
             var updatedAssignment = okResult.Value as OfficerAssignment;
 
-            Assert.That(updatedAssignment.Status, Is.EqualTo("Approved"));
+            Assert.That(updatedAssignment.Status, Is.EqualTo(OfficerStatus.Approved));
             Assert.That(updatedAssignment.Remarks, Is.EqualTo("Updated"));
         }
 
+        // -------------------- DELETE ASSIGNMENT --------------------
         [Test]
         public async Task DeleteAssignment_ReturnsNotFound_WhenNotExists()
         {
-            // Arrange
-            _mockRepository.Setup(r => r.GetByIdAsync(1))
-                .ReturnsAsync((OfficerAssignment)null);
+            _mockAssignmentRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync((OfficerAssignment)null);
 
-            // Act
             var result = await _controller.DeleteAssignment(1);
 
-            // Assert
             Assert.That(result, Is.InstanceOf<NotFoundResult>());
         }
 
         [Test]
         public async Task DeleteAssignment_ReturnsNoContent_WhenExists()
         {
-            // Arrange
             var assignment = new OfficerAssignment { OfficerAssignmentId = 1 };
-            _mockRepository.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(assignment);
-            _mockRepository.Setup(r => r.DeleteAsync(1)).Returns(Task.CompletedTask);
+            _mockAssignmentRepo.Setup(r => r.GetByIdAsync(1)).ReturnsAsync(assignment);
+            _mockAssignmentRepo.Setup(r => r.DeleteAsync(1)).Returns(Task.CompletedTask);
 
-            // Act
             var result = await _controller.DeleteAssignment(1);
 
-            // Assert
             Assert.That(result, Is.InstanceOf<NoContentResult>());
         }
     }

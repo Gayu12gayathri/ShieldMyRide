@@ -8,6 +8,7 @@ namespace ShieldMyRide.Models
     {
         public int UserId { get; set; }
         //public string? IdentityUserId { get; set; }
+        public string IdentityUserId { get; set; }
 
 
         [Required(ErrorMessage = "First Name is required"), StringLength(50)]

@@ -1,4 +1,6 @@
-﻿namespace ShieldMyRide.DTOs.OfficerAssignmentDTO
+﻿using ShieldMyRide.Models;
+
+namespace ShieldMyRide.DTOs.OfficerAssignmentDTO
 {
     public class OfficerAdminDTO
     {
@@ -12,9 +14,9 @@
         public int? ClaimId { get; set; }
         public DateTime AssignedAt { get; set; }
         public string Remarks { get; set; }
-        public string Status { get; set; }
+        public OfficerStatus Status { get; set; }
 
         // Computed / mapped from navigation
-       
+
     }
 }

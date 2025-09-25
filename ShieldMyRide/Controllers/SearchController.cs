@@ -65,7 +65,7 @@ namespace ShieldMyRide.Controllers
         }
 
         [HttpGet("officer/by-userid/{userId:int}")]
-        [Authorize(Roles = "Officer,Admin")]
+        [Authorize(Roles = "Officer,Admin,User")]
         public async Task<IActionResult> SearchByUserId(int userId)
         {
             var user = await _context.Users

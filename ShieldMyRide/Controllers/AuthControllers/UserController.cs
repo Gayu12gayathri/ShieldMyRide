@@ -1,8 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 using ShieldMyRide.Authentication;
 using ShieldMyRide.DTOs.UsersDTO;
+using ShieldMyRide.Context;
+using ShieldMyRide.Models;
+using ShieldMyRide.Repositary.Interfaces;
 
 namespace ShieldMyRide.Controllers.AuthControllers
 {
@@ -12,61 +17,131 @@ namespace ShieldMyRide.Controllers.AuthControllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IMapper _mapper;
+        private readonly ILogger<UserController> _logger;
+        private readonly MyDBContext _context;
 
-        public UserController(UserManager<ApplicationUser> userManager, IMapper mapper)
+        private readonly IProposalRepository _proposalRepo;
+        private readonly IPaymentRepository _paymentRepo;
+
+        public UserController(
+            UserManager<ApplicationUser> userManager,
+            IMapper mapper,
+            ILogger<UserController> logger,
+            MyDBContext context,
+            IProposalRepository proposalRepo,
+            IPaymentRepository paymentRepo
+        )
         {
             _userManager = userManager;
             _mapper = mapper;
+            _logger = logger;
+            _context = context;
+
+            _proposalRepo = proposalRepo;
+            _paymentRepo = paymentRepo;
         }
 
-        //  Get Customer by Id
-        [HttpGet("user/{id}")]
-        public async Task<ActionResult<CustomerDTO>> GetCustomer(string id)
+        [HttpGet("customer/{id:int}")]
+        public async Task<ActionResult<CustomerDTO>> GetCustomer(int id)
+        {
+            var customUser = await _context.Users.FindAsync(id);
+            if (customUser == null)
+                return NotFound($"User with Id {id} not found.");
+
+            var dto = _mapper.Map<CustomerDTO>(customUser);
+            return Ok(dto);
+        }
+
+
+        [HttpGet("officer/{id:int}")]
+        public async Task<ActionResult<OfficerDeatilDTO>> GetOfficer(int id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+                return NotFound($"Officer with Id {id} not found.");
+
+            var dto = _mapper.Map<OfficerDeatilDTO>(user);
+            return Ok(dto);
+        }
+
+        [HttpGet("admin/{id:int}")]
+        public async Task<ActionResult<AdminDTo>> GetAdmin(int id)
+        {
+            return await GetUserByRole<AdminDTo>(id, "Admin");
+        }
+
+        // Helper: Get user by role
+        private async Task<ActionResult<TDto>> GetUserByRole<TDto>(int customUserId, string roleName)
         {
             try
             {
-                var user = await _userManager.FindByIdAsync(id);
-                if (user == null) return NotFound();
+                var customUser = await _context.Users.FindAsync(customUserId);
+                if (customUser == null)
+                    return NotFound($"{roleName} with Id {customUserId} not found.");
 
-                return Ok(_mapper.Map<CustomerDTO>(user));
+                var identityUser = await _userManager.FindByIdAsync(customUser.IdentityUserId);
+                if (identityUser == null)
+                    return NotFound($"Linked Identity user not found for {roleName} with Id {customUserId}.");
+
+                var roles = await _userManager.GetRolesAsync(identityUser);
+                if (!roles.Contains(roleName))
+                    return BadRequest($"User with Id {customUserId} is not assigned role {roleName}.");
+
+                var dto = _mapper.Map<TDto>(identityUser);
+                return Ok(dto);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                _logger.LogError(ex, "Error fetching {Role} with Id {UserId}", roleName, customUserId);
+                return StatusCode(500, "An unexpected error occurred.");
             }
         }
 
-        //  Get Officer by Id
-        [HttpGet("officer/{id}")]
-        public async Task<ActionResult<OfficerDeatilDTO>> GetOfficer(string id)
+        // ✅ Balance Endpoint (by UserId only)
+        [HttpGet("{userId:int}/balance")]
+        public async Task<IActionResult> GetUserBalance(int userId)
         {
             try
             {
-                var user = await _userManager.FindByIdAsync(id);
-                if (user == null) return NotFound();
+                // 1️⃣ Find user by UserId
+                var user = await _context.Users.FindAsync(userId);
+                if (user == null)
+                    return NotFound(new { message = $"User with Id {userId} not found." });
 
-                return Ok(_mapper.Map<OfficerDeatilDTO>(user));
+                // 2️⃣ Get proposals of this user
+                var proposals = await _proposalRepo.GetByUserIdAsync(user.UserId);
+
+                var result = new List<object>();
+
+                foreach (var proposal in proposals)
+                {
+                    // 3️⃣ Claimed Amount = sum of all claims linked to proposal
+                    var claimedAmount = await _context.InsuranceClaims
+                        .Where(c => c.ProposalId == proposal.ProposalId)
+                        .SumAsync(c => (decimal?)c.ClaimAmount) ?? 0;
+
+                    // 4️⃣ Balance = Premium – total paid
+                    var payments = await _paymentRepo.GetByProposalIdAsync(proposal.ProposalId);
+                    var totalPaid = payments.Sum(p => p.AmountPaid);
+                    var balanceAmount = proposal.Premium - totalPaid;
+
+                    result.Add(new
+                    {
+                        ProposalId = proposal.ProposalId,
+                        //QuoteId = proposal.QuoteId,       // include QuoteId
+                        UserId = user.UserId,
+                        UserName = $"{user.FirstName} {user.LastName}",
+                        ClaimedAmount = claimedAmount,
+                        BalanceAmount = balanceAmount
+                    });
+                }
+
+                return Ok(result);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
-
-        //  Get Admin by Id
-        [HttpGet("admin/{id}")]
-        public async Task<ActionResult<AdminDTo>> GetAdmin(string id)
-        {
-            try
-            {
-                var user = await _userManager.FindByIdAsync(id);
-                if (user == null) return NotFound();
-
-                return Ok(_mapper.Map<AdminDTo>(user));
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                _logger.LogError(ex, "Error fetching balance for UserId {UserId}", userId);
+                return StatusCode(500, new { message = "An error occurred while fetching balance.", details = ex.Message });
             }
         }
     }

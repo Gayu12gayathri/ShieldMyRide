@@ -1,0 +1,100 @@
+.reviews-section {
+  background: #fff;
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.reviews-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.reviews-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+}
+
+.review-cards {
+  display: flex;
+  gap: 20px;
+  transition: all 0.5s ease;
+}
+
+.review-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  min-height: 220px;
+  text-align: left;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.comment {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.review-card h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.review-card .role {
+  font-size: 14px;
+  color: #777;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.stars {
+  color: #ffb400;
+  font-size: 16px;
+}
+
+/* Arrows */
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* center vertically */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  display: flex;                /* center the arrow properly */
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #2f78a8;               /* purple arrow like your 2nd image */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.arrow-btn.left {
+  left: -25px; /* adjust overlap distance */
+}
+
+.arrow-btn.right {
+  right: -25px;
+}
+
+.arrow-btn:hover {
+  background: #2f78a8;
+  color: #fff;                  /* white arrow on hover */
+}
+

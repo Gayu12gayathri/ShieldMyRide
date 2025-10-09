@@ -1,0 +1,52 @@
+.user-details-card {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e40af; /* blue-700 */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #374151; /* gray-700 */
+}
+
+.details-item {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 30px;
+  padding: 6px 0;
+  border-bottom: 1px solid #e5e7eb; /* gray-200 */
+}
+
+.details-key {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.details-value {
+  font-weight: 400;
+}
+
+.message {
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.message.error {
+  color: #dc2626; /* red-500 */
+}

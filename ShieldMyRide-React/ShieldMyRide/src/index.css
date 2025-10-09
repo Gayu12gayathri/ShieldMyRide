@@ -1,0 +1,1061 @@
+:root { 
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; 
+  line-height: 1.5; 
+  font-weight: 400; 
+  text-align: center;
+  color-scheme: light; 
+  color: #1f2937; 
+  background-color: #f7f7f9; 
+  --navbar-height: 64px; 
+} 
+
+body {
+   margin: 0;
+   min-width: 320px; 
+   min-height: 100vh; 
+   background-color: #f7f7f9; 
+}
+
+main, .page-container {
+   padding-top: var(--navbar-height); /* shift page content below navbar */
+}
+
+ h1 { 
+  font-size: 2rem; 
+  line-height: 1.2; 
+  margin: 1rem 2rem; 
+  color: #0f172a; 
+}
+
+
+/* Navbar container */
+.navbar-wrapper .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--navbar-height, 64px);
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-wrapper .navbar-content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+/* Brand */
+.navbar-wrapper .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-wrapper .brand-logo {
+  height: 36px;
+  width: auto;
+}
+
+.navbar-wrapper .brand-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Navigation links */
+.navbar-wrapper .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-wrapper .nav-links a {
+  text-decoration: none;
+  color: #111827;
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar-wrapper .nav-links a:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* Dropdown container */
+.navbar-wrapper .dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown toggle (Motor Insurance) */
+.navbar-wrapper .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1.05rem;
+  cursor: pointer;
+  color: #111827;
+  transition: background 0.2s ease;
+}
+
+.dropdown-toggle:hover {
+  background: #f3f4f6;
+}
+
+/* Caret arrow */
+.caret {
+  margin-left: 0.35rem;
+  vertical-align: middle;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  transition: transform 0.15s ease;
+}
+.caret.up {
+  transform: rotate(-135deg);
+}
+
+/* Dropdown menu */
+.navbar-wrapper .dropdown-menu {
+  align-items: flex-start;
+  text-align: left;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+  padding: 0.5rem;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1010;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-wrapper .dropdown.open .dropdown-menu {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar-wrapper .dropdown-menu a {
+  text-decoration: none;
+  color: #111827;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar-wrapper .dropdown-menu a:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* Actions (Login/Logout button) */
+.navbar-wrapper .nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-wrapper .login-btn,
+.navbar-wrapper .logout-btn {
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+.navbar-wrapper .logout-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.navbar-wrapper .login-btn:hover,
+.navbar-wrapper .logout-btn:hover {
+  background: linear-gradient(to right, #1d4ed8, #1e40af);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Hamburger Menu */
+.navbar-wrapper .hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #111827;
+}
+/* Username display in navbar */
+.navbar-wrapper .username {
+  color: #000;           /* Black text, change if your navbar is dark */
+  font-weight: 600;      /* Slightly bold */
+  font-size: 16px;       /* Adjust size as needed */
+  margin-right: 15px;    /* Space between username and logout button */
+  display: inline-block; /* Ensure it aligns properly with button */
+  white-space: nowrap;
+}
+.navbar-wrapper .user-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar-wrapper .user-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  transition: transform 0.2s ease;
+}
+
+.navbar-wrapper .user-icon:hover {
+  transform: scale(1.05);
+}
+
+.navbar-wrapper .user-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  min-width: 160px;
+  z-index: 10;
+}
+
+.navbar-wrapper .user-dropdown button {
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.navbar-wrapper .user-dropdown button:hover {
+  background-color: #f0f0f0;
+}
+
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--navbar-height, 64px);
+    right: 1rem;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+
+  .nav-links.open {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-actions {
+    margin-top: 0.5rem;
+  }
+}
+
+.support-dropdown {
+  position: absolute;
+  top: 100%; /* ensures dropdown appears just below the button */
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  width: 340px;
+  z-index: 999;
+  text-align: left;
+  line-height: 1.5;
+  margin-top: 8px; /* small gap between button and dropdown */
+}
+
+.support-section {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.support-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.support-section h4 {
+  font-size: 1rem;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+}
+
+.support-section p {
+  margin: 0.2rem 0;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: #1e3a8a;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+  color: #0f172a;
+}
+
+/* .main-section */
+/* .main-section {
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 20px;
+  margin-top: 40px;
+  margin-bottom: 40px; 
+}
+
+.car-image img {
+  max-width: 400px;  
+  height: auto;
+}
+
+.main-form-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  width: 400px;
+   margin: 0 auto;
+}
+
+.main-form-card h2 {
+  margin-bottom: 5px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.main-form-card p {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.main-form-card input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.captcha-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.captcha-box label {
+  flex: 1;
+}
+
+.captcha-box input {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #023666;
+} */
+
+/* .checkboxes {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.checkboxes label {
+  display: flex;         
+  align-items: flex-start;   
+  margin-bottom: 6px;
+  gap: 6px;             
+  white-space: nowrap;
+} */
+/* .checkboxes {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.checkboxes label {
+  display: flex;
+  align-items: flex-start; 
+  margin-bottom: 12px; 
+  gap: 8px;
+  cursor: pointer;
+}
+
+
+.checkboxes input[type="checkbox"] {
+  margin-top: 2px; 
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+
+.checkbox-text {
+  display: inline;
+  line-height: 1.4;
+}
+
+
+.checkboxes a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.checkboxes a:hover {
+  text-decoration: underline;
+}
+
+
+.checkboxes b {
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .main-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .primary-btn {
+    width: 100%;
+  }
+   .car-image {
+    max-width: 100%;
+  }
+} */
+
+
+/* about section */
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--navbar-height); 
+  padding: 40px 80px;
+  background: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+  text-align: justify;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1f2937; /* dark grey */
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+/* Quote calculation page*/
+/* QuotePage.css */
+
+.quote-form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-top:var(--navbar-height);
+  font-family: 'Arial', sans-serif;
+}
+
+.quote-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.quote-form p {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.quote-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.quote-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  color: #000000;
+  text-align: left;
+}
+
+.quote-form input[type="text"],
+.quote-form input[type="number"],
+.quote-form select {
+  padding: 10px 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.quote-form input[type="text"]:focus,
+.quote-form input[type="number"]:focus,
+.quote-form select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.quote-form input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.quote-form button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quote-form button:hover {
+  background-color: #0056b3;
+}
+
+.quote-result {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #e6f7ff;
+  border-left: 5px solid #007bff;
+  border-radius: 8px;
+}
+
+.quote-result h3 {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.quote-result p {
+  margin-bottom: 6px;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Make checkboxes and their text inline */
+.quote-form label.checkbox-label {
+  display: flex;
+  flex-direction: row; /* checkbox + text in same line */
+  align-items: center; /* vertically center */
+  gap: 8px; /* space between checkbox and text */
+  font-size: 14px;
+  color: #333;
+  margin-top: 5px;
+}
+
+
+/*  Auth (Login) Page UI */
+
+.auth-page {
+  margin-top: var(--navbar-height);   /* remove extra spacing */
+  padding-top: 4rem; /* optional if you want breathing space */
+}
+.auth-page {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 1000px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+.auth-form {
+  padding: 2.25rem 2rem;
+}
+
+.auth-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.auth-subtitle {
+  margin: 0 0 1.5rem 0;
+  color: #6b7280;
+}
+
+.auth-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0.8rem 0.9rem;
+  font-size: 1rem;
+  background: #ffffff;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.auth-row {
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.link-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-button {
+  margin-top: 0.75rem;
+  width: 100%;
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.auth-footer {
+  margin-top: 1rem;
+  color: #6b7280;
+}
+
+.link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.auth-visual {
+  background-image: url('/src/assets/login.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 420px;
+}
+
+@media (max-width: 900px) {
+  .auth-card {
+    grid-template-columns: 1fr;
+  }
+  .auth-visual { display: none; }
+}
+
+/* Register Page UI */
+.register-page {
+  margin-top: var(--navbar-height);
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f7f7f9;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 1000px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  padding: 3rem;
+}
+
+.register-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+}
+
+.register-subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin: 0 0 2rem 0;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+
+
+.register-form .form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.register-form .input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0.8rem 0.9rem;
+  font-size: 1rem;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-form .input:focus {
+  outline: none;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.register-button {
+  margin-top: 0.75rem;
+  width: 100%;
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+.register-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.register-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .register-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .register-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* --- Section Styles --- */
+.insurance-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.insurance-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.insurance-section p {
+  color: #000000;
+  margin-bottom: 25px;
+}
+
+/* --- Grid Layout --- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  gap: 15px;
+  align-items: stretch;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Card Styles --- */
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.2s ease;
+  
+  /* overflow: hidden; */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* --- Align Image and Title --- */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff !important;
+  /* border: none;
+  outline: none;
+  padding: 0; */
+ 
+}
+
+.card-header img {
+  width: 50px;
+  height: auto;
+}
+
+.card-header h3 {
+  font-size: 21px;
+  margin: 0;
+  color: #222;
+  /* border: none;
+  outline: none; */
+}
+
+/* --- Card Text --- */
+.card p {
+  font-size: 16px;
+   padding: 5px;
+  color: #222222;
+  text-align: justify;
+}
+
+/*car insurance about */
+/* about section */
+.about-car-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
+  background: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.about-car-text {
+  flex: 1;
+  max-width: 600px;
+  padding-right: 20px;
+  text-align: justify;
+}
+
+.about-car-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #030303; 
+}
+
+.about-car-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.about-car-image {
+  flex: 1;
+  display: flex-start;
+  justify-content: center;
+}
+
+.about-car-image img {
+  max-width: 600px;
+  padding-right: 80px;
+  width: 110%;
+  height: auto;
+}
+
+/*ul-list*/
+.ul-list{
+  text-align: justify;
+}
+.ul-list-content{
+  text-align: center;
+}

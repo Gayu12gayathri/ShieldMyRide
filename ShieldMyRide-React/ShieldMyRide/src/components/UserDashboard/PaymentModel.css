@@ -1,0 +1,113 @@
+/* ===== Overlay ===== */
+.paymodal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* ===== Modal Container ===== */
+.paymodal-container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  width: 380px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== Close Button ===== */
+.paymodal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #444;
+  transition: color 0.2s ease;
+}
+
+.paymodal-close:hover {
+  color: #000;
+}
+
+/* ===== Header Image ===== */
+.paymodal-image {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+/* ===== Title ===== */
+.paymodal-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* ===== Inputs ===== */
+.paymodal-input {
+  width: 100%;
+  margin: 6px 0;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.paymodal-input:focus {
+  border-color: #2e8b57;
+}
+
+/* ===== Row for Expiry/CVV ===== */
+.paymodal-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.paymodal-half {
+  width: 100%;
+}
+
+/* ===== Checkbox ===== */
+.paymodal-checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.paymodal-checkbox {
+  transform: scale(1.1);
+}
+
+/* ===== Submit Button ===== */
+.paymodal-submit {
+  background: #28a745;
+  color: white;
+  font-size: 15px;
+  padding: 10px 0;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.2s ease;
+}
+
+.paymodal-submit:hover {
+  background: #218838;
+}
+

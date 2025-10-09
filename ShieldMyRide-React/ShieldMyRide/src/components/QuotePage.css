@@ -1,0 +1,138 @@
+/* .main-section */
+.main-section {
+display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 20px;
+  margin-top: 50px;
+  margin-bottom: 40px; /* optional subtle background */
+}
+
+.car-image img {
+  max-width: 400px;   /* adjust size */
+  height: auto;
+}
+
+.main-form-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  width: 400px;
+   margin: 0 auto;
+  /* align-items: center; */
+}
+
+.main-form-card h2 {
+  margin-bottom: 5px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.main-form-card p {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.main-form-card input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.captcha-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.captcha-box label {
+  flex: 1;
+}
+
+.captcha-box input {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #023666;
+}
+.checkboxes {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.checkboxes label {
+  display: flex;
+  align-items: flex-start; /* Changed to flex-start for better text alignment */
+  margin-bottom: 12px; /* Increased spacing */
+  gap: 8px; /* Increased gap */
+  cursor: pointer;
+}
+
+/* Ensure checkbox is properly aligned */
+.checkboxes input[type="checkbox"] {
+  margin-top: 2px; /* Fine-tune vertical alignment */
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+/* Text container to handle inline elements */
+.checkbox-text {
+  display: inline;
+  line-height: 1.4;
+}
+
+/* Style for links */
+.checkboxes a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.checkboxes a:hover {
+  text-decoration: underline;
+}
+
+/* Bold for WhatsApp */
+.checkboxes b {
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .main-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .primary-btn {
+    width: 100%;
+  }
+   .car-image {
+    max-width: 100%;
+  }
+}

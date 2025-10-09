@@ -1,0 +1,43 @@
+.officer-doc-review {
+  padding: 25px;
+  background: #f9fafb;
+  font-family: "Segoe UI", sans-serif;
+  border-radius: 10px;
+ margin-top: calc(var(--navbar-height) + 20px);
+}
+
+h2 {
+  color: #1e3a8a;
+}
+
+.msg {
+  margin: 10px 0;
+  color: green;
+}
+
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.doc-table th, .doc-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.doc-table th {
+  background: #1e3a8a;
+  color: white;
+}
+
+.save-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

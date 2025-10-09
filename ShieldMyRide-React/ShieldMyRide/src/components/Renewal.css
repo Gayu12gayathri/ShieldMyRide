@@ -1,0 +1,168 @@
+/* === Renewal Page Layout === */
+.renewal-container {
+  max-width: 1100px;
+  margin: 50px auto 10px auto; /* pushes content below navbar */
+  padding: 30px;
+  /* border-radius: 16px; */
+  /* box-shadow: 0 4px 12px rgba(0,0,0,0.08); */
+  /* background: #ffffff; */
+}
+.renewal-container .main-form-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  width: 400px;
+   margin: 0 auto;
+  /* align-items: center; */
+}
+.renewal-container .main-section {
+display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px 10px;
+  margin-top: 50px;
+  margin-bottom: 40px; /* optional subtle background */
+}
+.renewal-container .submit-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.renewal-container .submit-btn:hover {
+  background: #023666;
+}
+.renewal-container .checkboxes {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.renewal-container .checkboxes label {
+  display: flex;
+  align-items: flex-start; /* Changed to flex-start for better text alignment */
+  margin-bottom: 12px; /* Increased spacing */
+  gap: 8px; /* Increased gap */
+  cursor: pointer;
+}
+
+/* Ensure checkbox is properly aligned */
+.renewal-container .checkboxes input[type="checkbox"] {
+  margin-top: 2px; /* Fine-tune vertical alignment */
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+/* Text container to handle inline elements */
+.renewal-container .checkbox-text {
+  display: inline;
+  line-height: 1.4;
+}
+
+/* Style for links */
+.renewal-container .checkboxes a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.renewal-container .checkboxes a:hover {
+  text-decoration: underline;
+}
+
+/* Bold for WhatsApp */
+.renewal-container .checkboxes b {
+  font-weight: 600;
+}
+
+/* Header styling */
+.renewal-container h2 {
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.renewal-container p {
+  text-align: center;
+  color: #475569;
+  margin-bottom: 25px;
+}
+
+/* === Table Styling === */
+.proposals-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.proposals-table th {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  font-weight: 600;
+  text-align: center;
+  padding: 14px 10px;
+  font-size: 0.9rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.proposals-table td {
+  text-align: center;
+  padding: 12px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #374151;
+}
+
+.proposals-table tr:last-child td {
+  border-bottom: none;
+}
+
+.proposals-table tr:hover {
+  background-color: #f8fafc;
+  transition: background 0.2s ease;
+}
+
+/* === Renew Button === */
+.submit-btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* === Responsive Table === */
+@media (max-width: 768px) {
+  .proposals-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,131 @@
+.homepage {
+  width: 100%;
+  background: #fff;
+  padding: 100px 10%;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top:60px;
+}
+
+.hero-image img {
+  width: 380px;
+  height: auto;
+}
+.hero-text  {
+  text-align: center;
+}
+.hero-text h1 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.get-quote-btn {
+  background: #2c6fa7;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.get-quote-btn:hover {
+  background: #1d4f77;
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.stats div h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c6fa7;
+}
+
+.stats div p {
+  font-size: 14px;
+  color: #666;
+}
+.homepage .insurance-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.homepage .insurance-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.homepage .insurance-section p {
+  color: #000000;
+  margin-bottom: 25px;
+}
+/* --- Card Styles --- */
+.homepage .card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.2s ease;
+  
+  /* overflow: hidden; */
+}
+
+.homepage .card:hover {
+  transform: translateY(-5px);
+}
+
+/* --- Align Image and Title --- */
+.homepage  .card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff !important;
+  /* border: none;
+  outline: none;
+  padding: 0; */
+ 
+}
+
+.homepage  .card-header img {
+  width: 50px;
+  height: auto;
+}
+
+.homepage .card-header h3 {
+  font-size: 21px;
+  margin: 0;
+  color: #222;
+  /* border: none;
+  outline: none; */
+}
+
+/* --- Card Text --- */
+.homepage .card p {
+  font-size: 10px;
+   padding: 5px;
+  color: #222222;
+  text-align: justify;
+  max-width: 400px;
+}

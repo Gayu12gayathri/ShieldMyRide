@@ -1,0 +1,339 @@
+[2025-10-05 19:27:20,309] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Now listening on: https://localhost:7153
+[2025-10-05 19:27:20,826] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Now listening on: http://localhost:5028
+[2025-10-05 19:27:21,334] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Application started. Press Ctrl+C to shut down.
+[2025-10-05 19:27:21,347] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Hosting environment: Development
+[2025-10-05 19:27:21,357] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Content root path: D:\Downloads\ShieldMyRide\ShieldMyRide
+[2025-10-05 19:30:19,870] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 19:30:21,025] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 19:30:22,250] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'ClaimAmount' on entity type 'InsuranceClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:30:22,262] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'SettlementAmount' on entity type 'InsuranceClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:30:22,275] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'AmountPaid' on entity type 'Payment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:30:22,284] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'BasePremium' on entity type 'Policy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:30:22,290] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'CoverageAmount' on entity type 'Policy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:30:22,299] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'Premium' on entity type 'Proposal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:30:22,306] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'PremiumAmount' on entity type 'Quote'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:30:25,674] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (283ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 19:30:25,674] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (283ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 19:30:26,495] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (40ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 19:30:26,496] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (40ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 19:30:26,543] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (15ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 19:30:26,548] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (15ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 19:30:26,860] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 19:30:26,906] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 19:38:31,279] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 19:38:32,119] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (121ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 19:38:32,444] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 19:38:32,474] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (12ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 19:38:32,501] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 19:39:14,697] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (31ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[UserId] = @__p_0
+[2025-10-05 19:43:10,169] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Now listening on: https://localhost:7153
+[2025-10-05 19:43:10,298] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Now listening on: http://localhost:5028
+[2025-10-05 19:43:10,769] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Application started. Press Ctrl+C to shut down.
+[2025-10-05 19:43:10,816] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Hosting environment: Development
+[2025-10-05 19:43:10,850] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Content root path: D:\Downloads\ShieldMyRide\ShieldMyRide
+[2025-10-05 19:44:15,331] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 19:44:17,587] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'ClaimAmount' on entity type 'InsuranceClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:44:17,598] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'SettlementAmount' on entity type 'InsuranceClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:44:17,613] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'AmountPaid' on entity type 'Payment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:44:17,629] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'BasePremium' on entity type 'Policy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:44:17,642] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'CoverageAmount' on entity type 'Policy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:44:17,651] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'Premium' on entity type 'Proposal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:44:17,659] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'PremiumAmount' on entity type 'Quote'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:44:20,649] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (327ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 19:44:21,469] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (34ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 19:44:21,518] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (15ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 19:44:21,651] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 19:47:13,532] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Now listening on: https://localhost:7153
+[2025-10-05 19:47:13,642] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Now listening on: http://localhost:5028
+[2025-10-05 19:47:13,946] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Application started. Press Ctrl+C to shut down.
+[2025-10-05 19:47:13,977] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Hosting environment: Development
+[2025-10-05 19:47:14,624] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Content root path: D:\Downloads\ShieldMyRide\ShieldMyRide
+[2025-10-05 19:54:13,494] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 19:54:15,704] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'ClaimAmount' on entity type 'InsuranceClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:54:15,713] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'SettlementAmount' on entity type 'InsuranceClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:54:15,720] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'AmountPaid' on entity type 'Payment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:54:15,727] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'BasePremium' on entity type 'Policy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:54:15,734] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'CoverageAmount' on entity type 'Policy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:54:15,741] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'Premium' on entity type 'Proposal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:54:15,748] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'PremiumAmount' on entity type 'Quote'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 19:54:18,570] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (273ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 19:54:19,396] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (19ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 19:54:19,448] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (14ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 19:54:19,570] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 19:54:31,665] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 19:54:31,832] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (13ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 19:54:32,162] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (16ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 19:54:32,186] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (8ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 19:54:32,193] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 19:58:35,946] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 19:58:36,008] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (19ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 19:58:36,558] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (69ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 19:58:36,623] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (26ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 19:58:36,702] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 19:58:46,578] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 19:58:46,602] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (11ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 19:58:46,889] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 19:58:46,907] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (10ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 19:58:46,919] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 19:59:24,559] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Kaviya_7
+[2025-10-05 19:59:24,587] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (15ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 19:59:24,942] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (13ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 19:59:24,974] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (12ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 19:59:24,985] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Officer login detected for username: Kaviya_7
+[2025-10-05 19:59:24,992] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Kaviya_7, roles: Officer
+[2025-10-05 20:01:02,166] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 20:01:02,352] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (145ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 20:01:02,490] WARN  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login failed for username: Aruna_13
+[2025-10-05 20:02:23,405] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 20:02:23,619] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (142ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 20:02:24,068] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (68ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 20:02:24,119] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (34ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 20:02:24,132] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 22:26:15,395] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Now listening on: https://localhost:7153
+[2025-10-05 22:26:15,497] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Now listening on: http://localhost:5028
+[2025-10-05 22:26:15,662] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Application started. Press Ctrl+C to shut down.
+[2025-10-05 22:26:15,692] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Hosting environment: Development
+[2025-10-05 22:26:15,725] INFO  [1] Microsoft.Hosting.Lifetime ((null)) - Content root path: D:\Downloads\ShieldMyRide\ShieldMyRide
+[2025-10-05 22:26:33,567] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 22:26:34,294] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'ClaimAmount' on entity type 'InsuranceClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 22:26:34,299] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'SettlementAmount' on entity type 'InsuranceClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 22:26:34,302] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'AmountPaid' on entity type 'Payment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 22:26:34,305] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'BasePremium' on entity type 'Policy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 22:26:34,308] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'CoverageAmount' on entity type 'Policy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 22:26:34,315] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'Premium' on entity type 'Proposal'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 22:26:34,320] WARN  [.NET TP Worker] Microsoft.EntityFrameworkCore.Model.Validation ((null)) - No store type was specified for the decimal property 'PremiumAmount' on entity type 'Quote'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2025-10-05 22:26:35,786] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (165ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 22:26:36,080] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (13ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 22:26:36,098] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (7ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 22:26:36,134] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 22:26:36,137] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Returning userId 8 for Aruna_13
+[2025-10-05 22:29:39,941] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 22:29:40,056] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (15ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 22:29:40,138] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 22:29:40,146] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (4ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 22:29:40,150] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 22:29:40,153] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Returning userId 8 for Aruna_13
+[2025-10-05 22:29:53,438] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 22:29:53,461] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 22:29:53,530] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 22:29:53,536] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (2ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 22:29:53,541] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 22:29:53,544] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Returning userId 8 for Aruna_13
+[2025-10-05 22:30:18,070] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Kaviya_7
+[2025-10-05 22:30:18,084] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (9ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 22:30:18,153] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 22:30:18,159] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (2ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 22:30:18,163] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Officer login detected for username: Kaviya_7
+[2025-10-05 22:30:18,165] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Kaviya_7, roles: Officer
+[2025-10-05 22:30:18,167] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Returning userId 4 for Kaviya_7
+[2025-10-05 22:33:08,356] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 22:33:08,379] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (12ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 22:33:08,457] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 22:33:08,465] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (5ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 22:33:08,467] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 22:33:08,469] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Returning userId 8 for Aruna_13
+[2025-10-05 22:37:52,489] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 22:37:52,617] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (88ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 22:37:52,714] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 22:37:52,725] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (5ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 22:37:52,731] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 22:37:52,734] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Returning userId 8 for Aruna_13
+[2025-10-05 22:41:04,337] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 22:41:04,445] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (81ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 22:41:04,538] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 22:41:04,551] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (6ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 22:41:04,555] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 22:41:04,558] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Returning userId 8 for Aruna_13
+[2025-10-05 22:44:18,655] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login attempt for username: Aruna_13
+[2025-10-05 22:44:18,751] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (63ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AadhaarHash], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PanHash], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2025-10-05 22:44:18,838] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2025-10-05 22:44:18,854] INFO  [.NET TP Worker] Microsoft.EntityFrameworkCore.Database.Command ((null)) - Executed DbCommand (9ms) [Parameters=[@__user_Email_0='?' (Size = 120)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[AadhaarNumber], [u].[CreatedAt], [u].[DateOfBirth], [u].[Email], [u].[FirstName], [u].[IdentityUserId], [u].[LastName], [u].[PanNumber], [u].[PasswordHash], [u].[PhoneNumber], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__user_Email_0
+[2025-10-05 22:44:18,862] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Login successful for username: Aruna_13, roles: User
+[2025-10-05 22:44:18,870] INFO  [.NET TP Worker] ShieldMyRide.Controllers.AuthenticationController ((null)) - Returning userId 8 for Aruna_13
+[2025-10-05 23:47:27,193] INFO  [14] Microsoft.Hosting.Lifetime ((null)) - Application is shutting down...

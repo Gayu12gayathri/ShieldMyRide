@@ -1,0 +1,152 @@
+.claim-container {
+  font-family: "Segoe UI", sans-serif;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--navbar-height);
+}
+
+.claim-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  gap: 2rem;
+}
+
+.claim-image img {
+  width: 350px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.claim-content {
+  flex: 1;
+ 
+}
+
+.claim-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.claim-content p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+   text-align: left;
+}
+
+.primary-btn {
+  background-color: transparent;
+  color: #1b2e9a;
+  border: 2px solid #1b2e9a;
+  border-radius: 25px;
+  padding: 0.7rem 1.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  background-color: #1b569a;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .claim-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .claim-image img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Step 2 */
+.claim-category {
+  text-align: center;
+}
+
+.category-options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.option-card {
+  background: #f3f4f6;
+  border-radius: 15px;
+  padding: 2rem 1.5rem;
+  width: 140px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.option-card:hover {
+  transform: translateY(-3px);
+  background: #eef2ff;
+}
+
+.option-card.selected {
+  border-color: #1e3a8a;
+  background-color: #e0e7ff;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+/* Step 3 */
+.policy-validation {
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+}
+
+.policy-validation h3 {
+  margin-bottom: 1rem;
+}
+
+.policy-validation form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.policy-validation input {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.or-divider {
+  text-align: center;
+  color: #888;
+  margin: 0.5rem 0;
+}
+
+.captcha-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.captcha-section input {
+  width: 100px;
+}

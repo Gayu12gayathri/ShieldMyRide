@@ -1,0 +1,84 @@
+.proposals{
+  margin-top: var(--navbar-height);
+}
+.proposals .proposal-form {
+  max-width: 700px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.proposals .proposal-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2a3d66;
+}
+.proposals .proposal-form .user-details {
+  background: #f4f7ff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #d3ddf3;
+}
+
+.proposals .user-details p {
+  margin: 5px 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.proposals .proposal-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 25px;
+}
+
+.proposals .proposal-form label {
+  display: flex;
+  text-align:left;
+  flex-direction: column;
+  font-weight: 600;
+  color: #1e2d56;
+  font-size: 14px;
+}
+
+.proposals .proposal-form input,
+select {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.proposals .proposal-form input[type="file"] {
+  border: none;
+  padding: 4px 0;
+}
+
+.proposals button {
+  grid-column: span 2;
+  margin-top: 20px;
+  background-color: #2a3d66;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.proposals button:hover {
+  background-color: #1e2b50;
+}
+
+
+@media (max-width: 600px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+}

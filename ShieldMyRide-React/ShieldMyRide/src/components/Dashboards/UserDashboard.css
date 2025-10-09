@@ -1,0 +1,243 @@
+/*Layout Container*/
+.dashboard {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f7fa;
+  margin-top: var(--navbar-height); 
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #3a6aec;
+  color: white;
+  width: 200px;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* Menu List */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.menu li {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.menu li:hover {
+  background-color: #317df8;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.welcome-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.username {
+  color: #1e3a8a;
+  font-weight: bold;
+}
+
+/* Cards Layout */
+.main-content .cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.main-content .card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.search-bar-container {
+  margin-top: 20px;
+    justify-content: flex-end;
+    display: flex;
+}
+
+
+.main-content .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.main-content .card h3 {
+  color: #555;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.main-content .card p {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Card Colors */
+.card.blue p {
+  color: #1e40af;
+}
+.card.green p {
+  color: #059669;
+}
+.card.red p {
+  color: #dc2626;
+}
+.card.purple p {
+  color: #7e22ce;
+}
+
+
+
+.recent-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.recent-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    z-index: 1000;
+  }
+
+  .main-content {
+    margin-left: 70px;
+    padding: 20px;
+  }
+
+  .sidebar.open {
+    width: 200px;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 500px) {
+    .cards-container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+/* Active tab in sidebar */
+.menu li.active {
+  background-color: #3b82f6;
+  font-weight: bold;
+}
+
+/* Section inside main content */
+.tab-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #1e3a8a;
+  border-bottom: 2px solid #1e3a8a;
+  padding-bottom: 5px;
+}
+
+/* Make it stick to top as you scroll */
+.right-panel {
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+/* Optional: Adjust small search bar appearance */
+.right-panel .search-container {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.right-panel .search-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.right-panel .search-bar input,
+.right-panel .search-bar select {
+  font-size: 12px;
+  padding: 6px;
+}
+
+.right-panel .search-bar button {
+  font-size: 12px;
+  padding: 6px 10px;
+}

@@ -1,0 +1,78 @@
+.user-proposals {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.user-proposals h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.proposal-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.proposal-table th,
+.proposal-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.proposal-table th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+}
+
+.proposal-table td input,
+.proposal-table td select {
+  width: 90%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.review-btn {
+  padding: 5px 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.3s;
+}
+
+.review-btn:hover {
+  background-color: #218838;
+}
+
+.status-approved {
+  color: green;
+  font-weight: 600;
+}
+
+.status-pending {
+  color: orange;
+  font-weight: 600;
+}
+
+.status-rejected {
+  color: red;
+  font-weight: 600;
+}
+
+.loading, .error {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}

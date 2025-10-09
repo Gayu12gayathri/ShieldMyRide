@@ -1,0 +1,54 @@
+.download-policy-container {
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* margin-top: var(--navbar-height); */
+}
+
+.download-policy-container h2 {
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+.download-policy-container p {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.download-policy-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* margin-top: 10px; */
+}
+
+.download-policy-form input {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.download-policy-form button {
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.download-policy-form button:hover {
+  background-color: #2e4fb1;
+}
+
+.download-policy-form button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}

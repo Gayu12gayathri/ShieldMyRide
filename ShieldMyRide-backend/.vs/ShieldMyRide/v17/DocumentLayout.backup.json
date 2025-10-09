@@ -1,0 +1,806 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Downloads\\ShieldMyRide\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7409CF6D-EFB9-4740-8540-48D2019F1AE3}|ShieldMyRide.Tests\\ShieldMyRide.Tests.csproj|d:\\downloads\\shieldmyride\\shieldmyride.tests\\paymentscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7409CF6D-EFB9-4740-8540-48D2019F1AE3}|ShieldMyRide.Tests\\ShieldMyRide.Tests.csproj|solutionrelative:shieldmyride.tests\\paymentscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7409CF6D-EFB9-4740-8540-48D2019F1AE3}|ShieldMyRide.Tests\\ShieldMyRide.Tests.csproj|d:\\downloads\\shieldmyride\\shieldmyride.tests\\claimscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7409CF6D-EFB9-4740-8540-48D2019F1AE3}|ShieldMyRide.Tests\\ShieldMyRide.Tests.csproj|solutionrelative:shieldmyride.tests\\claimscontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\controllers\\claimscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\controllers\\claimscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7409CF6D-EFB9-4740-8540-48D2019F1AE3}|ShieldMyRide.Tests\\ShieldMyRide.Tests.csproj|d:\\downloads\\shieldmyride\\shieldmyride.tests\\proposalcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7409CF6D-EFB9-4740-8540-48D2019F1AE3}|ShieldMyRide.Tests\\ShieldMyRide.Tests.csproj|solutionrelative:shieldmyride.tests\\proposalcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7409CF6D-EFB9-4740-8540-48D2019F1AE3}|ShieldMyRide.Tests\\ShieldMyRide.Tests.csproj|d:\\downloads\\shieldmyride\\shieldmyride.tests\\officerassignmenttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7409CF6D-EFB9-4740-8540-48D2019F1AE3}|ShieldMyRide.Tests\\ShieldMyRide.Tests.csproj|solutionrelative:shieldmyride.tests\\officerassignmenttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\controllers\\proposalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\controllers\\proposalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\controllers\\quotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\controllers\\quotescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\dtos\\proposalpolicydocument\\proposalwithdocumentsformmodeldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\dtos\\proposalpolicydocument\\proposalwithdocumentsformmodeldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\models\\policydocument.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\models\\policydocument.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\models\\proposal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\models\\proposal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\controllers\\searchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\controllers\\searchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\controllers\\officerassginmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\controllers\\officerassginmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\repositary\\implementation\\officersassignmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\repositary\\implementation\\officersassignmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\context\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\context\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\models\\officersassignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\models\\officersassignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\repositary\\interfaces\\iofficersassignmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\repositary\\interfaces\\iofficersassignmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\dtos\\officerassignmentdto\\officerassignmentresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\dtos\\officerassignmentdto\\officerassignmentresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\dtos\\officerassignmentdto\\officerassignmentcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\dtos\\officerassignmentdto\\officerassignmentcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\models\\officerassignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\models\\officerassignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\controllers\\officerassignmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\controllers\\officerassignmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\repositary\\interfaces\\iproposalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\repositary\\interfaces\\iproposalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\repositary\\implementation\\proposalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\repositary\\implementation\\proposalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\repositary\\implementation\\policydocumentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\repositary\\implementation\\policydocumentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HP\\AppData\\Local\\Temp\\c56a1d5a-7a33-44f5-b742-dbd198ba94a3_ShieldMyRide_(12)[1].zip.4a3\\ShieldMyRide\\ShieldMyRide\\Controllers\\PaymentsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\dtos\\proposaldto\\officerreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\dtos\\proposaldto\\officerreviewdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\controllers\\policydocumentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\controllers\\policydocumentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\repositary\\implementation\\claimrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\repositary\\implementation\\claimrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\repositary\\interfaces\\iclaimrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\repositary\\interfaces\\iclaimrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\models\\insuranceclaim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\models\\insuranceclaim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\repositary\\interfaces\\iquoterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\repositary\\interfaces\\iquoterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\repositary\\interfaces\\ipaymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\repositary\\interfaces\\ipaymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\repositary\\implementation\\paymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\repositary\\implementation\\paymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\models\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\models\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\repositary\\implementation\\quoterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\repositary\\implementation\\quoterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\dtos\\usersdto\\admindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\dtos\\usersdto\\admindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\controllers\\authcontrollers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\controllers\\authcontrollers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\migrations\\20251006060524_updated proposalname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\migrations\\20251006060524_updated proposalname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\migrations\\20251007095056_added pendingstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\migrations\\20251007095056_added pendingstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\migrations\\20251007191222_addcascadededdeleteforclaims.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\migrations\\20251007191222_addcascadededdeleteforclaims.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\migrations\\20251007185501_addrestricteddelete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\migrations\\20251007185501_addrestricteddelete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|d:\\downloads\\shieldmyride\\shieldmyride\\migrations\\20251008051218_addofficeremarksinproposal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AFBA720-2564-4E4C-B5B1-2D58671858F7}|ShieldMyRide\\ShieldMyRide.csproj|solutionrelative:shieldmyride\\migrations\\20251008051218_addofficeremarksinproposal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PaymentsControllerTests.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide.Tests\\PaymentsControllerTests.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide.Tests\\PaymentsControllerTests.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide.Tests\\PaymentsControllerTests.cs",
+              "RelativeToolTip": "ShieldMyRide.Tests\\PaymentsControllerTests.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAtwDIAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T07:41:31.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClaimsControllerTests.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide.Tests\\ClaimsControllerTests.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide.Tests\\ClaimsControllerTests.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide.Tests\\ClaimsControllerTests.cs",
+              "RelativeToolTip": "ShieldMyRide.Tests\\ClaimsControllerTests.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAIwJIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T07:40:48.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OfficerAssignmentTests.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide.Tests\\OfficerAssignmentTests.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide.Tests\\OfficerAssignmentTests.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide.Tests\\OfficerAssignmentTests.cs",
+              "RelativeToolTip": "ShieldMyRide.Tests\\OfficerAssignmentTests.cs",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAwwNIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T07:38:00.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProposalControllerTests.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide.Tests\\ProposalControllerTests.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide.Tests\\ProposalControllerTests.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide.Tests\\ProposalControllerTests.cs",
+              "RelativeToolTip": "ShieldMyRide.Tests\\ProposalControllerTests.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAIwKIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T07:36:18.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OfficerAssginmentController.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\OfficerAssginmentController.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Controllers\\OfficerAssginmentController.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\OfficerAssginmentController.cs",
+              "RelativeToolTip": "ShieldMyRide\\Controllers\\OfficerAssginmentController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAAC0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T19:03:13.899Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Program.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Program.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Program.cs",
+              "RelativeToolTip": "ShieldMyRide\\Program.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAgwD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T13:47:59.683Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PaymentsController.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\PaymentsController.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Controllers\\PaymentsController.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\PaymentsController.cs",
+              "RelativeToolTip": "ShieldMyRide\\Controllers\\PaymentsController.cs",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAIwAYBAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T06:29:10.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClaimsController.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\ClaimsController.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Controllers\\ClaimsController.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\ClaimsController.cs",
+              "RelativeToolTip": "ShieldMyRide\\Controllers\\ClaimsController.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAwwGoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T05:57:50.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProposalsController.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\ProposalsController.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Controllers\\ProposalsController.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\ProposalsController.cs",
+              "RelativeToolTip": "ShieldMyRide\\Controllers\\ProposalsController.cs",
+              "ViewState": "AgIAABgCAAAAAAAAAAAgwCECAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T05:11:01.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MyDBContext.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Context\\MyDBContext.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Context\\MyDBContext.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Context\\MyDBContext.cs",
+              "RelativeToolTip": "ShieldMyRide\\Context\\MyDBContext.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAADwvxEAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T18:50:03.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "QuotesController.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\QuotesController.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Controllers\\QuotesController.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\QuotesController.cs",
+              "RelativeToolTip": "ShieldMyRide\\Controllers\\QuotesController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwB0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T17:29:52.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SearchController.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\SearchController.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Controllers\\SearchController.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\SearchController.cs",
+              "RelativeToolTip": "ShieldMyRide\\Controllers\\SearchController.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAIwFEAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T18:14:55.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PolicyDocument.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\PolicyDocument.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Models\\PolicyDocument.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\PolicyDocument.cs",
+              "RelativeToolTip": "ShieldMyRide\\Models\\PolicyDocument.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAqwBcAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T05:15:40.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Proposal.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\Proposal.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Models\\Proposal.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\Proposal.cs",
+              "RelativeToolTip": "ShieldMyRide\\Models\\Proposal.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAqwGoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T06:04:30.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProposalWithDocumentsFormModelDTO.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\DTOs\\ProposalpolicyDocument\\ProposalWithDocumentsFormModelDTO.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\DTOs\\ProposalpolicyDocument\\ProposalWithDocumentsFormModelDTO.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\DTOs\\ProposalpolicyDocument\\ProposalWithDocumentsFormModelDTO.cs",
+              "RelativeToolTip": "ShieldMyRide\\DTOs\\ProposalpolicyDocument\\ProposalWithDocumentsFormModelDTO.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T03:46:35.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IOfficersAssignmentRepository.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Interfaces\\IOfficersAssignmentRepository.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Repositary\\Interfaces\\IOfficersAssignmentRepository.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Interfaces\\IOfficersAssignmentRepository.cs",
+              "RelativeToolTip": "ShieldMyRide\\Repositary\\Interfaces\\IOfficersAssignmentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T18:58:17.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OfficersAssignmentRepository.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Implementation\\OfficersAssignmentRepository.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Repositary\\Implementation\\OfficersAssignmentRepository.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Implementation\\OfficersAssignmentRepository.cs",
+              "RelativeToolTip": "ShieldMyRide\\Repositary\\Implementation\\OfficersAssignmentRepository.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwCMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T18:59:03.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OfficerAssignmentResponseDTO.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\DTOs\\OfficerAssignmentDTO\\OfficerAssignmentResponseDTO.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\DTOs\\OfficerAssignmentDTO\\OfficerAssignmentResponseDTO.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\DTOs\\OfficerAssignmentDTO\\OfficerAssignmentResponseDTO.cs",
+              "RelativeToolTip": "ShieldMyRide\\DTOs\\OfficerAssignmentDTO\\OfficerAssignmentResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T18:57:29.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "OfficersAssignment.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\OfficersAssignment.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Models\\OfficersAssignment.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\OfficersAssignment.cs",
+              "RelativeToolTip": "ShieldMyRide\\Models\\OfficersAssignment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T18:56:04.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "OfficerAssignmentCreateDTO.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\DTOs\\OfficerAssignmentDTO\\OfficerAssignmentCreateDTO.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\DTOs\\OfficerAssignmentDTO\\OfficerAssignmentCreateDTO.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\DTOs\\OfficerAssignmentDTO\\OfficerAssignmentCreateDTO.cs",
+              "RelativeToolTip": "ShieldMyRide\\DTOs\\OfficerAssignmentDTO\\OfficerAssignmentCreateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T18:56:59.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "OfficerAssignment.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\OfficerAssignment.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Models\\OfficerAssignment.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\OfficerAssignment.cs",
+              "RelativeToolTip": "ShieldMyRide\\Models\\OfficerAssignment.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAYwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T18:37:25.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ProposalRepository.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Implementation\\ProposalRepository.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Repositary\\Implementation\\ProposalRepository.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Implementation\\ProposalRepository.cs",
+              "RelativeToolTip": "ShieldMyRide\\Repositary\\Implementation\\ProposalRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T18:20:35.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IProposalRepository.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Interfaces\\IProposalRepository.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Repositary\\Interfaces\\IProposalRepository.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Interfaces\\IProposalRepository.cs",
+              "RelativeToolTip": "ShieldMyRide\\Repositary\\Interfaces\\IProposalRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwA4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T18:20:09.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Models\\Payment.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\Payment.cs",
+              "RelativeToolTip": "ShieldMyRide\\Models\\Payment.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAUwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T21:11:04.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "OfficerAssignmentsController.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\OfficerAssignmentsController.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Controllers\\OfficerAssignmentsController.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\OfficerAssignmentsController.cs",
+              "RelativeToolTip": "ShieldMyRide\\Controllers\\OfficerAssignmentsController.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAKMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T13:47:51.82Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "PolicyDocumentRepository.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Implementation\\PolicyDocumentRepository.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Repositary\\Implementation\\PolicyDocumentRepository.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Implementation\\PolicyDocumentRepository.cs",
+              "RelativeToolTip": "ShieldMyRide\\Repositary\\Implementation\\PolicyDocumentRepository.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAUwEkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T05:42:13.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "PaymentsController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\AppData\\Local\\Temp\\c56a1d5a-7a33-44f5-b742-dbd198ba94a3_ShieldMyRide_(12)[1].zip.4a3\\ShieldMyRide\\ShieldMyRide\\Controllers\\PaymentsController.cs",
+              "ToolTip": "C:\\Users\\HP\\AppData\\Local\\Temp\\c56a1d5a-7a33-44f5-b742-dbd198ba94a3_ShieldMyRide_(12)[1].zip.4a3\\ShieldMyRide\\ShieldMyRide\\Controllers\\PaymentsController.cs [Read Only]",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAgwIkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T05:27:10.508Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "OfficerReviewDTO.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\DTOs\\ProposalDTO\\OfficerReviewDTO.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\DTOs\\ProposalDTO\\OfficerReviewDTO.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\DTOs\\ProposalDTO\\OfficerReviewDTO.cs",
+              "RelativeToolTip": "ShieldMyRide\\DTOs\\ProposalDTO\\OfficerReviewDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T09:48:57.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "PolicyDocumentsController.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\PolicyDocumentsController.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Controllers\\PolicyDocumentsController.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\PolicyDocumentsController.cs",
+              "RelativeToolTip": "ShieldMyRide\\Controllers\\PolicyDocumentsController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAcwFYAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T10:37:54.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "ShieldMyRide\\Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAmwKwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T14:16:34.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "20251008051218_addofficeremarksinproposal.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Migrations\\20251008051218_addofficeremarksinproposal.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Migrations\\20251008051218_addofficeremarksinproposal.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Migrations\\20251008051218_addofficeremarksinproposal.cs",
+              "RelativeToolTip": "ShieldMyRide\\Migrations\\20251008051218_addofficeremarksinproposal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T05:12:19.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ClaimRepository.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Implementation\\ClaimRepository.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Repositary\\Implementation\\ClaimRepository.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Implementation\\ClaimRepository.cs",
+              "RelativeToolTip": "ShieldMyRide\\Repositary\\Implementation\\ClaimRepository.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAowGQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T19:15:35.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "PaymentRepository.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Implementation\\PaymentRepository.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Repositary\\Implementation\\PaymentRepository.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Implementation\\PaymentRepository.cs",
+              "RelativeToolTip": "ShieldMyRide\\Repositary\\Implementation\\PaymentRepository.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAA9wFQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T21:09:05.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "IPaymentRepository.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Interfaces\\IPaymentRepository.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Repositary\\Interfaces\\IPaymentRepository.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Interfaces\\IPaymentRepository.cs",
+              "RelativeToolTip": "ShieldMyRide\\Repositary\\Interfaces\\IPaymentRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAIwAoAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T21:10:03.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "IClaimRepository.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Interfaces\\IClaimRepository.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Repositary\\Interfaces\\IClaimRepository.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Interfaces\\IClaimRepository.cs",
+              "RelativeToolTip": "ShieldMyRide\\Repositary\\Interfaces\\IClaimRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAwwA8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T19:22:23.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "InsuranceClaim.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\InsuranceClaim.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Models\\InsuranceClaim.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\InsuranceClaim.cs",
+              "RelativeToolTip": "ShieldMyRide\\Models\\InsuranceClaim.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T11:19:14.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "IQuoteRepository.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Interfaces\\IQuoteRepository.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Repositary\\Interfaces\\IQuoteRepository.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Interfaces\\IQuoteRepository.cs",
+              "RelativeToolTip": "ShieldMyRide\\Repositary\\Interfaces\\IQuoteRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwAgAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T21:10:31.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Quote.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\Quote.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Models\\Quote.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\Quote.cs",
+              "RelativeToolTip": "ShieldMyRide\\Models\\Quote.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAA9wCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T21:11:18.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "QuoteRepository.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Implementation\\QuoteRepository.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Repositary\\Implementation\\QuoteRepository.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Repositary\\Implementation\\QuoteRepository.cs",
+              "RelativeToolTip": "ShieldMyRide\\Repositary\\Implementation\\QuoteRepository.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAkwDYAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T21:12:07.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "20251007191222_Addcascadededdeleteforclaims.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Migrations\\20251007191222_Addcascadededdeleteforclaims.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Migrations\\20251007191222_Addcascadededdeleteforclaims.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Migrations\\20251007191222_Addcascadededdeleteforclaims.cs",
+              "RelativeToolTip": "ShieldMyRide\\Migrations\\20251007191222_Addcascadededdeleteforclaims.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T19:12:22.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "20251007185501_Addrestricteddelete.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Migrations\\20251007185501_Addrestricteddelete.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Migrations\\20251007185501_Addrestricteddelete.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Migrations\\20251007185501_Addrestricteddelete.cs",
+              "RelativeToolTip": "ShieldMyRide\\Migrations\\20251007185501_Addrestricteddelete.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T18:55:02.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\User.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Models\\User.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Models\\User.cs",
+              "RelativeToolTip": "ShieldMyRide\\Models\\User.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAYwD8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T14:19:44.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\AuthControllers\\UserController.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Controllers\\AuthControllers\\UserController.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Controllers\\AuthControllers\\UserController.cs",
+              "RelativeToolTip": "ShieldMyRide\\Controllers\\AuthControllers\\UserController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAQwEgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T14:09:39.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "AdminDTO.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\DTOs\\UsersDTO\\AdminDTO.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\DTOs\\UsersDTO\\AdminDTO.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\DTOs\\UsersDTO\\AdminDTO.cs",
+              "RelativeToolTip": "ShieldMyRide\\DTOs\\UsersDTO\\AdminDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T12:04:41.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "20251007095056_added pendingstatus.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Migrations\\20251007095056_added pendingstatus.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Migrations\\20251007095056_added pendingstatus.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Migrations\\20251007095056_added pendingstatus.cs",
+              "RelativeToolTip": "ShieldMyRide\\Migrations\\20251007095056_added pendingstatus.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-07T09:50:57.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "20251006060524_updated proposalname.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Migrations\\20251006060524_updated proposalname.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Migrations\\20251006060524_updated proposalname.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Migrations\\20251006060524_updated proposalname.cs",
+              "RelativeToolTip": "ShieldMyRide\\Migrations\\20251006060524_updated proposalname.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T06:05:27.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Mappings\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "ShieldMyRide\\Mappings\\MappingProfile.cs",
+              "ToolTip": "D:\\Downloads\\ShieldMyRide\\ShieldMyRide\\Mappings\\MappingProfile.cs",
+              "RelativeToolTip": "ShieldMyRide\\Mappings\\MappingProfile.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAswH8AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T05:44:14.507Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

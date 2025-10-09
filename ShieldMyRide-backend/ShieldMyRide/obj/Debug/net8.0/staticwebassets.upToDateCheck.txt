@@ -1,0 +1,6 @@
+wwwroot\uploads\proposals\13\AddressProof_638955796498734661.pdf
+wwwroot\uploads\proposals\13\DrivingLicense_638955796498167425.pdf
+wwwroot\uploads\proposals\13\IncomeProof_638955796498643232.pdf
+wwwroot\uploads\proposals\13\PassportPhoto_638955796498714569.jpg
+wwwroot\uploads\proposals\13\PreviousInsurance_638955796498589782.pdf
+wwwroot\uploads\proposals\13\Signature_638955796498769452.png

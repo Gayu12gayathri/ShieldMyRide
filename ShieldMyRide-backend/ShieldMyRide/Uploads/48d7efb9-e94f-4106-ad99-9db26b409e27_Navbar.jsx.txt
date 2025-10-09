@@ -1,0 +1,66 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Logo from './assets/Logo.jpg'
+import NavDropdown from './NavDropdown'
+
+const Navbar = ({ onLoginClick, onSignupClick, onLogoutClick, isAuthenticated }) => {
+  return (
+    <header className="navbar">
+      <div className="navbar__inner">
+        <a
+          href="/"
+          className="navbar__brand"
+          aria-label="ShieldMyRide Home"
+          onClick={(e) => { e.preventDefault(); window.location.assign('/'); }}
+        >
+          <img src={Logo} alt="ShieldMyRide logo" className="navbar__logo" />
+          <span className="navbar__name shimmer-text">ShieldMyRide</span>
+        </a>
+        <nav className="navbar__actions">
+          <div className="navbar__menu">
+            <Link to="/">Home</Link>
+            <a href="#">About</a>
+            <NavDropdown
+              label="Services"
+              items={[
+                { label: 'Insurance Form', href: '#insurance-form' },
+                { label: 'Claims', href: '#claims' },
+              ]}
+            />
+            <NavDropdown
+              label="Blog"
+              items={[
+                { label: 'Know us', href: '#knowus' },
+                { label: 'Reviews', href: '#reviews' },
+              ]}
+            />
+            <NavDropdown
+              label="Pages"
+              items={[
+                { label: 'Privacy Policy', href: '#privacy' },
+                { label: 'Insurance Form', href: '#insurance-form' },
+                { label: 'Claims', href: '#claims' },
+              ]}
+            />
+            <a href="#">Contact</a>
+          </div>
+          {!isAuthenticated ? (
+            <>
+              <button className="btn btn--ghost" onClick={onLoginClick}>Log in</button>
+              <button className="btn btn--primary" onClick={onSignupClick}>Sign up</button>
+            </>
+          ) : (
+            <>
+              <button className="btn btn--ghost" onClick={onLogoutClick}>Logout</button>
+              <div className="navbar__avatar" aria-label="Profile" />
+            </>
+          )}
+        </nav>
+      </div>
+    </header>
+  )
+}
+
+export default Navbar
+
+

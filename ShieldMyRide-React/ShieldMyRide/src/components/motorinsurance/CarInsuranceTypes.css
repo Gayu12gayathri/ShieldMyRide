@@ -1,0 +1,106 @@
+.insurance-page{
+  margin-top:var(--navbar-height)
+}
+
+.car-insurance-section {
+  background-color: #ffffff;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.insurance-box {
+  position: relative;
+  background: transparent;
+}
+
+.insurance-card {
+  width: 90%;
+  margin: auto;
+  min-height: 300px;
+  transition: all 0.5s ease-in-out;
+}
+
+.insurance-image img {
+  border-radius: 12px;
+}
+
+.insurance-content h4 {
+  color: #1f2937;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.insurance-content p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.buy-btn {
+  background-color: #ffffff;
+  border: none;
+  margin-top: 15px;
+  border-radius: 30px;
+  font-weight: 600;
+  padding: 10px 18px;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background-color: #2f78a8;
+}
+
+.buy-btn .arrow {
+  margin-left: 6px;
+  font-size: 16px;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2f78a8;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.arrow-btn:hover {
+  background: #2f78a8;
+}
+
+.arrow-btn.left {
+  left: -20px;
+}
+
+.arrow-btn.right {
+  right: -20px;
+}
+
+@media (max-width: 768px) {
+  .insurance-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .insurance-image {
+    margin-bottom: 20px;
+  }
+
+  .arrow-btn.left {
+    left: 0;
+  }
+
+  .arrow-btn.right {
+    right: 0;
+  }
+}

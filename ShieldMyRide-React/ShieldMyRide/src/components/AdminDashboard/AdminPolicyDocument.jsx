@@ -33,7 +33,7 @@ export default function AdminPolicyDocument() {
             <th>Policy Name</th>
             <th>Document Type</th>
             <th>Uploaded Date</th>
-            <th>View</th>
+            {/* <th>View</th> */}
           </tr>
         </thead>
         <tbody>
@@ -43,7 +43,7 @@ export default function AdminPolicyDocument() {
               <td>{doc.policyId}</td>
               <td>{doc.documentType}</td>
               <td>{new Date(doc.uploadedAt).toLocaleDateString()}</td>
-              <td>
+              {/* <td>
                 <a
                   href={`https://localhost:7153/uploads/${doc.documentPath}`}
                   target="_blank"
@@ -51,7 +51,7 @@ export default function AdminPolicyDocument() {
                 >
                   View
                 </a>
-              </td>
+              </td> */}
             </tr>
           ))}
         </tbody>

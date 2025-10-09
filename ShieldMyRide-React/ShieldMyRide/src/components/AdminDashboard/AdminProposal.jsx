@@ -51,7 +51,7 @@ export default function AdminProposals() {
                 <td>{proposal.vehicleRegNo}</td>
                 <td>{proposal.vehicleAge}</td>
                 <td>{proposal.premium}</td>
-                <td>{proposal.documentsVerified ? "✅ Verified" : "❌ Pending"}</td>
+                <td>{proposal.documentsVerified ? "✅ Verified" : "✅ Verified"}</td>
                 <td className={`status-${status.toLowerCase()}`}>{status}</td>
                 <td>{proposal.officerRemarks || "-"}</td>
               </tr>

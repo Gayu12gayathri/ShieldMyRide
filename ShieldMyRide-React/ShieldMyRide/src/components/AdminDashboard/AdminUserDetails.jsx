@@ -58,6 +58,8 @@ export default function AdminUserDetails() {
         panNumber: "",
         role: "Officer",
       });
+      await dispatch(fetchUsers()).unwrap();
+
       setShowForm(false);
     } catch (err) {
       console.error(err);
@@ -65,7 +67,7 @@ export default function AdminUserDetails() {
     }
   };
 
-  const handleEdit = (user) => {
+  const handleEdit = async (user) => {
     setEditingUserId(user.userId || user.UserId);
     setFormData({
       firstName: user.firstName || user.FirstName,
@@ -76,6 +78,7 @@ export default function AdminUserDetails() {
       panNumber: user.panNumber || user.PanNumber,
       role: user.role || user.Role,
     });
+    await dispatch(fetchUsers()).unwrap();
     setShowForm(true);
   };
 
@@ -84,6 +87,8 @@ export default function AdminUserDetails() {
       try {
         await dispatch(deleteUser(userId)).unwrap();
         setMessage(`✅ User deleted successfully!`);
+        await dispatch(fetchUsers());
+
       } catch (err) {
         console.error(err);
         setMessage(`❌ Failed to delete user: ${err?.message || ""}`);
@@ -94,9 +99,9 @@ export default function AdminUserDetails() {
   return (
     <div className="user-claims">
       <h3>Admin & Officer Users</h3>
-      <button className="create-claim-btn" onClick={() => setShowForm((prev) => !prev)}>
+      {/* <button className="create-claim-btn" onClick={() => setShowForm((prev) => !prev)}>
         {showForm ? "Cancel" : "➕ Add User"}
-      </button>
+      </button> */}
 
       {showForm && (
         <div className="claim-form">
@@ -122,6 +127,7 @@ export default function AdminUserDetails() {
             type="email"
             required
           />
+          
           <input
             name="phoneNumber"
             value={formData.phoneNumber}
@@ -145,7 +151,7 @@ export default function AdminUserDetails() {
             <option value="User">User</option>
             <option value="Admin">Admin</option>
           </select>
-          <button className="submit-claim-btn" onClick={handleSubmit}>
+          <button type="button" className="submit-claim-btn" onClick={handleSubmit}>
             {editingUserId ? "Update User" : "Add User"}
           </button>
         </div>

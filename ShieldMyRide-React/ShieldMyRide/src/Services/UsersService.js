@@ -3,6 +3,8 @@ import axios from "axios";
 
 const API_URL = "https://localhost:7153/api/Users"; // adjust base URL as needed
 
+const BackendURL = "https://localhost:7153/api/Users/Register";
+
 class UsersService {
   // Get all users
   static async getAllUsers() {
@@ -38,12 +40,26 @@ class UsersService {
   }
 
   // Create a new user
-  static async createUser(userData) {
+ static async createUser(userData) {
     try {
-      const response = await axios.post(API_URL, userData);
+      // Map frontend formData to backend RegisterModel
+      const registerModel = {
+        Username: userData.email,         // or generate a username
+        Email: userData.email,
+        Password: userData.password,      // make sure your form collects this
+        PhoneNumber: userData.phoneNumber,
+        AadhaarMasked: userData.aadhaarNumber,
+        PanMasked: userData.panNumber,
+        FirstName: userData.firstName,
+        LastName: userData.lastName,
+        Role: userData.role,
+        DateOfBirth: userData.dateOfBirth,
+      };
+
+      const response = await axios.post(BackendURL, registerModel);
       return response.data;
     } catch (error) {
-      console.error("Error creating user:", error);
+      console.error("Error creating user:", error.response?.data || error.message);
       throw error;
     }
   }

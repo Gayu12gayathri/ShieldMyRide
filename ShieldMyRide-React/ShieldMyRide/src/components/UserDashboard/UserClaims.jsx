@@ -16,7 +16,7 @@ export default function UserClaims({ userId }) {
   });
   const [creating, setCreating] = useState(false);
   const [message, setMessage] = useState("");
-  const [showForm, setShowForm] = useState(false); // ✅ show/hide form
+  const [showForm, setShowForm] = useState(false);
 
   // Fetching both claims and payments
   useEffect(() => {
@@ -26,19 +26,23 @@ export default function UserClaims({ userId }) {
 
   // Auto-fill claimAmount when proposalId changes
   useEffect(() => {
-    if (claimData.proposalId && payments?.length > 0) {
-      const proposalPayments = payments.filter(
-        (p) => p.proposalID === Number(claimData.proposalId)
-      );
-      if (proposalPayments.length > 0) {
-        const latest = proposalPayments[proposalPayments.length - 1];
-        setClaimData((prev) => ({
-          ...prev,
-          claimAmount: latest.balance || 0,
-        }));
-      }
+  if (claimData.proposalId && payments?.length > 0) {
+    const proposalPayments = payments.filter(
+      (p) => p.proposalID === Number(claimData.proposalId)
+    );
+    if (proposalPayments.length > 0) {
+      const latest = proposalPayments[proposalPayments.length - 1];
+      setClaimData(prev => ({
+        ...prev,
+        claimAmount: latest.balance !== undefined ? latest.balance : "", // show empty if no balance
+      }));
+    } else {
+      setClaimData(prev => ({ ...prev, claimAmount: "" }));
     }
-  }, [claimData.proposalId, payments]);
+  } else {
+    setClaimData(prev => ({ ...prev, claimAmount: "" }));
+  }
+}, [claimData.proposalId, payments]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -48,28 +52,36 @@ export default function UserClaims({ userId }) {
   const handleCreateClaim = async () => {
   setCreating(true);
   setMessage("");
-  try {
-    const settlement = getClaimSettlementAmount(Number(claimData.proposalId));
 
+  try {
+    // Make sure proposalId is selected
+    if (!claimData.proposalId) {
+      setMessage("❌ Please select a Proposal ID.");
+      setCreating(false);
+      return;
+    }
+
+    // Payload for backend – do NOT send claimAmount or settlementAmount
     const newClaim = {
       claimId: 0,
       proposalId: Number(claimData.proposalId),
       userId: userId,
       claimDate: new Date().toISOString(),
       claimDescription: claimData.claimDescription || "",
-      claimAmount: Number(claimData.claimAmount) || 0,
-      settlementAmount: settlement,
-      claimStatus: settlement === 0 ? "Submitted" : settlement < claimData.claimAmount ? "PartiallyPaid" : "Settled",
+      claimAmount: Number(claimData.claimAmount) || 1, 
     };
 
-    await dispatch(createClaimThunk(newClaim)).unwrap();
+    // Dispatch to create claim
+    const createdClaim = await dispatch(createClaimThunk(newClaim)).unwrap();
 
+    // Refresh claims list to get updated settlementAmount from backend
+    await dispatch(fetchClaims());
+
+    // Reset form
     setClaimData({
       proposalId: "",
       claimDescription: "",
       claimAmount: "",
-      settlementAmount: 0,
-      claimStatus: "",
     });
     setShowForm(false);
     setMessage("✅ Claim created successfully!");
@@ -80,6 +92,30 @@ export default function UserClaims({ userId }) {
     setCreating(false);
   }
 };
+
+// Auto-fill claimAmount for display only
+useEffect(() => {
+  if (claimData.proposalId && payments?.length > 0) {
+    // Find the proposal corresponding to the selected ID
+    const proposalPayment = payments.find(
+      (p) => p.proposalID === Number(claimData.proposalId)
+    );
+
+    if (proposalPayment) {
+      // Auto-fill claimAmount from proposal premium
+      setClaimData((prev) => ({
+        ...prev,
+        claimAmount: proposalPayment.premium || 2, // default to 1 if missing
+      }));
+    } else {
+      setClaimData((prev) => ({ ...prev, claimAmount: "" }));
+    }
+  } else {
+    setClaimData((prev) => ({ ...prev, claimAmount: "" }));
+  }
+}, [claimData.proposalId, payments]);
+
+
 
 
 
@@ -95,13 +131,13 @@ export default function UserClaims({ userId }) {
     }
   };
   
-// // Calculate settlement dynamically
-// const getClaimSettlementAmount = (proposalId) => {
-//   const relatedPayments = payments.filter(
-//     (p) => p.proposalID === proposalId && p.forClaim
-//   );
-//   return relatedPayments.reduce((sum, p) => sum + (p.amountPaid || 0), 0);
-// };
+// Calculate settlement dynamically
+const getClaimSettlementAmount = (proposalId) => {
+  const relatedPayments = payments.filter(
+    (p) => p.proposalID === proposalId && p.forClaim
+  );
+  return relatedPayments.reduce((sum, p) => sum + (p.amountPaid || 0), 0);
+};
 
 // Calculate remaining balance
 // Calculate remaining balance (based on payments)

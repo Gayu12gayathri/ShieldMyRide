@@ -48,7 +48,7 @@ const handleReview = async (proposalId) => {
       proposalId,
       `Status updated to ${result.proposalStatus || result.newStatus}, Remarks: ${comments}`
     );
-
+ dispatch(fetchAllProposals());
   } catch (err) {
     console.error("Review failed:", err);
     alert("Failed to review proposal. Check console.");

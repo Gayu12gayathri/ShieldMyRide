@@ -52,39 +52,44 @@ export default function UserPayments({ userId }) {
     setShowPaymentModal(true);
   };
 
-  const handlePaymentSubmit = (paymentData) => {
-    if (isUpdateMode && selectedPayment) {
-      // Update existing payment
-      dispatch(
-        modifyPayment({
-          paymentId: selectedPayment.paymentId,
-          updatedData: {
-            userID: userId,
-            proposalID: selectedPayment.proposalID,
-            transactionId:
-              paymentData.transactionId || "TXN-" + Date.now(),
-            amountPaid: paymentData.amountPaid,
-            paymentStatus: paymentData.paymentStatus || "Paid",
-            paymentDate: new Date().toISOString().split("T")[0],
-            forClaim: paymentData.forClaim || false,
-          },
-        })
-      );
-    } else {
-      // Create new payment
-      dispatch(
-        payProposal({
-          proposalId: paymentData.proposalID,
-          amount: paymentData.amountPaid,
-          userId: paymentData.userID,
-        })
-      );
-    }
+  const handlePaymentSubmit = async (paymentData) => {
+  if (isUpdateMode && selectedPayment) {
+    // Update existing payment
+    await dispatch(
+      modifyPayment({
+        paymentId: selectedPayment.paymentId,
+        updatedData: {
+          userID: userId,
+          proposalID: selectedPayment.proposalID,
+          transactionId: paymentData.transactionId || "TXN-" + Date.now(),
+          amountPaid: paymentData.amountPaid,
+          paymentStatus: paymentData.paymentStatus || "Paid",
+          paymentDate: new Date().toISOString().split("T")[0],
+          forClaim: paymentData.forClaim || false,
+        },
+      })
+    ).unwrap();
+  } else {
+    // Create new payment
+    await dispatch(
+      payProposal({
+        proposalId: paymentData.proposalID,
+        amount: paymentData.amountPaid,
+        userId: paymentData.userID,
+      })
+    ).unwrap();
+  }
 
-    setShowPaymentModal(false);
-    setIsUpdateMode(false);
-    setSelectedPayment(null);
-  };
+  // Refetch payments
+    await dispatch(fetchPayments()).unwrap();
+
+  setShowPaymentModal(false);
+  setIsUpdateMode(false);
+  setSelectedPayment(null);
+};
+
+
+
 
   if (loading) return <p>Loading payments...</p>;
   if (error) return <p className="error">Error: {error}</p>;

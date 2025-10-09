@@ -104,20 +104,27 @@ const paymentSlice = createSlice({
         state.error = action.payload || "Failed to delete payment";
       })
 
-      .addCase(modifyPayment.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
+      // .addCase(modifyPayment.pending, (state) => {
+      //   state.loading = false;
+      //   state.error = null;
+      // })
       .addCase(modifyPayment.fulfilled, (state, action) => {
-        state.loading = false;
-        const { Payment, BalanceAmount, Status } = action.payload;
-        const index = state.list.findIndex(
-          (p) => p.paymentId === Payment.paymentId
-        );
-        if (index !== -1) state.list[index] = Payment;
-        state.balanceAmount = BalanceAmount;
-        state.status = Status;
-      })
+  state.loading = false;
+  const { Payment } = action.payload;
+
+  if (Payment) {
+    const index = state.list.findIndex(p => p.paymentId === Payment.paymentId);
+    if (index !== -1) {
+      // Immutable update
+      state.list = state.list.map(p =>
+        p.paymentId === Payment.paymentId ? { ...p, ...Payment } : p
+      );
+    } else {
+      // If somehow it's new, push it
+      state.list.push(Payment);
+    }
+  }
+})
       .addCase(modifyPayment.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload || "Failed to update payment";
